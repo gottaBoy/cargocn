@@ -112,10 +112,10 @@ header .well-sm {
 }
 /*==================     ToTop     ======================*/
 
-.mobile .toTop,
-.tablet .toTop {
-  display: none!important;
-}
+// .mobile .toTop,
+// .tablet .toTop {
+//   display: none!important;
+// }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
   border-top-right-radius: 0;
