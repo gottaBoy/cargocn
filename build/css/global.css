@@ -74,7 +74,7 @@ a:active,a:hover {
     height: 200px
 }
 
-.side.side-2 img {
+.side.side-2 .picture img {
      width: 162px;
      position:absolute;
      right: 55px;
