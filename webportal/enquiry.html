@@ -393,7 +393,18 @@
                                 <button type="button" class="btn border-default btn-lg">再下一单</button>
                                 <button type="button" class="btn border-success btn-social btn-lg wxshare"><i class="fa fa-wechat icon-white"></i> 分享至微信</button>
                             </div>
-                           <div class="col-md-12 shareHide" id="erweima"><img src="images/er_03.jpg"></div>   
+                            <div class="wemcn">
+                              <div id="ewm" class="ewmDiv clearfix">
+                                  <img id="ewmimg" class="ewmimg" src="http://cargocn.com/images/shipper_big.png">
+                                  <div class="rwmtext"> 
+                                      <p>扫一扫</p >
+                                      <p>把订单详情</p >
+                                      <p>分享给微信好友</p >
+                                  </div>
+                              </div>
+                              <i class="fa fa-caret-down fa-2x"></i>
+                            </div>  
+                            <!-- <div class="col-md-12 shareHide" id="erweima"><img src="images/er_03.jpg"></div>   --> 
                             <div class="col-md-12 social-icon">                             
                                 <img src="images/cargo.png" alt="">                        
                                 <img src="images/cargocn_driver.png" alt="" width="60" height="60" class="img-er">
@@ -488,7 +499,7 @@ $(document).ready(function() {//#enquiry_form
             // },
             success: function(result) {
                console.log(result);
-               if(result.code==100){
+               if(result.code==100){//id=779, enquiryBillId="T1702171151595159"
                   //console.log("用户手机号：" + result.data.userTel);
                   if(result.data.locked = false){ //正常的
                       
@@ -627,7 +638,8 @@ $(function(){
 
 //分享
 $(".wxshare").on("click",function() {
-      $(".shareHide").toggle();
+      //$(".shareHide").toggle();
+      $(".wemcn").toggle();
  });
 </script>
 
