@@ -75,7 +75,9 @@ a:active,a:hover {
 }
 
 .side.side-2 img {
-    width: 162px
+     width: 162px;
+     position:absolute;
+     right: 55px;
 }
 
 .side.side-3 .item-text .item-h {
