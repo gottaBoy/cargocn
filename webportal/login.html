@@ -53,26 +53,15 @@ $("#getValidateCode").on("click",function(){
     var userPhone = $("#userPhone").val();
     if(userPhone=="" || userPhone==null) return;
     $.ajax({
-        url: BASE_API_URL + "/getUserLoginCode.douserPhone=" + userPhone,
+        url: BASE_API_URL + "/getUserLoginCode.do?userPhone=" + userPhone,
         type: "POST",
         dataType: "json",
         success: function(data) {
            console.log(data);
         }
     });
-    /* $.ajax({
-        url: BASE_API_URL + "/getUserLoginCode.do?userPhone=" + userPhone,
-        type: 'GET',
-        dataType: 'jsonp',
-        timeout: 5000,
-        contentType: 'application/json; charset=utf-8',
-        success: function (data) {
-           console.log(result);
-        }
-    });*/
 })
 $("#logining").on("click",function(){
-    //debugger;
     var userPhone = $("#userPhone").val();
     var verifyCode = $("#verifyCode").val();
     if(userPhone=="" || userPhone==null) return;
@@ -84,7 +73,6 @@ $("#logining").on("click",function(){
         data: $("#logins_form").serialize(),
         success: function(result) {
            //console.log(data);
-           //{"code":"100","msg":"success","data":{"id":null,"organizationId":null,"username":null,"password":null,"salt":null,"locked":true,"really_name":null,"emailAddr":null,"userTel":"15900000011","companyName":null,"credentialsSalt":"null"}}
            if(result.code==100){
               console.log("用户手机号：" + result.data.userTel);
               if(result.data.locked = false){ //正常的
@@ -97,17 +85,5 @@ $("#logining").on("click",function(){
            }
         }
     });
-    /*$.ajax({
-        url: CHENGDA.BASE_API_URL + "/carfreerWebLogin.do?userPhone=" + userPhone + "&verifyCode=" + verifyCode,
-        type: 'GET',
-        dataType: 'jsonp',
-        jsonp:"callback",
-        jsonpCallback:"success_jsonpCallback",
-        timeout: 5000,
-        contentType: 'application/json; charset=utf-8',
-        success: function (data) {
-           console.log(result);
-        }
-    });*/
 })
 </script>
