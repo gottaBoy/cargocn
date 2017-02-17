@@ -82,228 +82,244 @@
                         </div>
                     </div>
                     <div class="panel-body" style="padding:30px">
-                      <form action="" id="enquiry_form">
-                        <div class="row bg-white b-shadow margin-bottom overhidden">
-                            <div class="col-md-1 panel-title smallPad" style="height:auto; width:36px;">
-                                <div style="position:absolute; top:50%; margin-top:-44px;">发
-                                    <br>货
-                                    <br>信
-                                    <br>息</div>
-                            </div>
-                            <div class="col-md-11 panel-form">
-                                <form action="#" id="second_form" class="form-horizontal" autocomplete="off" novalidate="novalidate">
-                                    <div class="form-body">
-                                        <a name="one"></a>
-                                        <div class="col-md-6">
-                                            <div class="panel panel-default">
-                                                <div class="panel-body form-horizontal">
-                                                    <div class="col-md-12 form-group">
-                                                        <label for="ownername" readonly="true" class="control-label col-md-4"><i class="redMark">*</i>发货城市</label>
-                                                        <div class="col-md-6">
-                                                            <select class="select2" name="startAddressId" id="send_index"></select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12 form-group">
-                                                        <label for="startAddress1" class="control-label col-md-4"><i class="redMark">*</i>发货地址</label>
-                                                        <div class="col-md-6">
-                                                            <input id="startAddress1" name="startAddress1" type="text" class="form-control">   
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12 form-group">
-                                                        <label for="planStartTime" class="control-label col-md-4">计划发运时间</label>
-                                                        <div class="col-md-6">
-                                                            <input id="planStartTime" name="planStartTime" type="text" class="form-control date form_date" data-date="2017-01-17" data-date-format="yyyy-mm-dd">                                 
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="panel panel-default">
-                                                <div class="panel-body form-horizontal">
-                                                    <div class="col-md-12 form-group">
-                                                        <label for="ownername" readonly="true" class="control-label col-md-4"><i class="redMark">*</i>收货城市</label>
-                                                        <div class="col-md-6">
-                                                             <select class="select2" name="arriveAddress" id="arrive_index"></select>  
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12 form-group">
-                                                        <label for="arriveAddress1" class="control-label col-md-4"><i class="redMark">*</i>收货地址</label>
-                                                        <div class="col-md-6">
-                                                            <input id="arriveAddress1" name="arriveAddress1" type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div> 
-                        <div class="row bg-white b-shadow margin-bottom overhidden">
-                            <div class="col-md-1 panel-title smallPad" style="height:auto; width:36px;">
-                                <div style="position:absolute; top:50%; margin-top:-44px;">货
-                                    <br>物
-                                    <br>信
-                                    <br>息</div>
-                            </div>
-                            <div class="col-md-11 panel-form">
-                                <form action="#" id="second_form" class="form-horizontal" autocomplete="off" novalidate="novalidate">
-                                    <div class="form-body">
-                                        <a name="two"></a>
-                                            <div class="form-group col-md-6">
-                                                <label for="bidName" class="col-sm-4 control-label">货物名称</label>
-                                                <div class="col-sm-8">
-                                                  <input type="text" name="bidName" id="bidName" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="bidWeight" class="col-sm-4 control-label">重量（吨）</label>
-                                                <div class="col-sm-8">
-                                                  <input type="text" name="bidWeight" id="bidWeight" class="form-control">
-                                                </div>
-                                            </div>
-                                    </div>
-
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row bg-white b-shadow margin-bottom overhidden">
-                            <div class="col-md-1 panel-title smallPad" style="height:auto; width:36px;">
-                                <div style="position:absolute; top:50%; margin-top:-44px;">运
-                                    <br>输
-                                    <br>信
-                                    <br>息</div>
-                            </div>
-                            <div class="col-md-11 panel-form">
-                                <form action="#" id="second_form" class="form-horizontal" autocomplete="off" novalidate="novalidate">
-                                <div class="form-body">
-                                    <a name="three"></a>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2"><span class="required" aria-required="true"> </span>运输方式</label>
-                                        <div class="col-md-3 radio inline" id="use_type">
-                                            <label>
-                                                <input type="radio" id="vehicle" name="use_type" value="1" checked="checked"> 汽运
-                                            </label>
-                                            <label style="padding-left:50px;">
-                                                <input type="radio" id="carpool" name="use_type" value="2"> 船运
-                                            </label>
-                                        </div>
-                                        <label class="message-info col-md-2"></label>
-                                    </div>
-                                    <div class="carshow">
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><span class="required" id="car_type_statu" aria-required="true"></span>车货总重</label>
-                                            <div class="col-md-7" id="car_type_contain">
-                                                <div class="car_type_box">
-                                                    <span class="item active" data_id="1">49吨</span>
-                                                    <span class="item" data_id="2">46吨</span>
-                                                    <span class="item" data_id="3">43吨</span>
-                                                    <span class="item" data_id="4">41吨</span>
-                                                    <span class="item" data_id="5">40吨</span>
-                                                    <span class="item" data_id="6">35吨</span>
-                                                    <span class="item" data_id="7">32吨</span>
-                                                </div>
-                                                <div id="car_type_more">
-
-                                                </div>
-                                            </div>
-                                            <label id="car_type_info" class="message-info col-md-2 text-danger"></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><span class="required" id="car_type_statu" aria-required="true"></span>车型</label>
-                                            <div class="col-md-7" id="car_type_contain">
-                                                <div class="car_type_box">
-                                                    <span class="item active" data_id="1">6轴(6*4+3半挂)</span>
-                                                    <span class="item" data_id="2">46轴(6*2+3半挂)</span>
-                                                    <span class="item" data_id="3">5轴(6*4+3半挂)</span>
-                                                    <span class="item" data_id="4">5轴(6*4+2半挂)</span>
-                                                    <span class="item" data_id="5">4轴(4*2+3半挂)</span>
-                                                    <span class="item" data_id="6">4轴(8*4载货车)</span>
-                                                </div>
-                                                <div id="car_type_more">
-
-                                                </div>
-                                            </div>
-                                            <label id="car_type_info" class="message-info col-md-2 text-danger"></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><span class="required" id="car_type_statu" aria-required="true"></span>货箱类型</label>
-                                            <div class="col-md-7" id="car_type_contain">
-                                                <div class="car_type_box">
-                                                    <span class="item active" data_id="1">高栏车</span>
-                                                    <span class="item" data_id="2">中栏车</span>
-                                                    <span class="item" data_id="3">低栏车</span>
-                                                    <span class="item" data_id="4">高低栏车</span>
-                                                    <span class="item" data_id="5">仓棚车</span>
-                                                    <span class="item" data_id="6">平板车</span>
-                                                    <span class="item" data_id="7">厢式车</span>
-                                                    <!-- <span class="item" data_id="6">集装箱</span> -->
-                                                </div>
-                                                <div id="car_type_more">
-
-                                                </div>
-                                            </div>
-                                            <label id="car_type_info" class="message-info col-md-2 text-danger"></label>
-                                        </div>
-                                    </div>
-                                    <div class="shipshow" style="display: none;">
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><span class="required" id="car_type_statu" aria-required="true"></span>船舶类型</label>
-                                            <div class="col-md-7" id="car_type_contain">
-                                                <div class="car_type_box">
-                                                    <span class="item active" data_id="1">集装箱船</span>
-                                                    <span class="item" data_id="2">散货船</span>
-                                                    <span class="item" data_id="3">滚装船</span>
-                                                </div>
-                                                <div id="car_type_more">
-
-                                                </div>
-                                            </div>
-                                            <label id="car_type_info" class="message-info col-md-2 text-danger"></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-2"><span class="required" id="car_type_statu" aria-required="true"></span>吨位</label>
-                                            <div class="col-md-7" id="car_type_contain">
-                                                <div class="car_type_box">
-                                                    <span class="item active" data_id="5">8000吨</span>
-                                                     <span class="item active" data_id="6">6000吨</span>
-                                                    <span class="item active" data_id="1">3000吨</span>
-                                                    <span class="item" data_id="2">2000吨</span>
-                                                    <span class="item" data_id="3">1500吨</span>
-                                                    <span class="item" data_id="4">1000吨</span>
-                                                    <!-- <span class="item" data_id="5">500吨</span> -->
-                                                </div>
-                                                <div id="car_type_more">
-
-                                                </div>
-                                            </div>
-                                            <label id="car_type_info" class="message-info col-md-2 text-danger"></label>
-                                        </div>
-                                    </div>
-
+                        <form id="enquiry_form">
+                            <div class="row bg-white b-shadow margin-bottom overhidden">
+                                <div class="col-md-1 panel-title smallPad" style="height:auto; width:36px;">
+                                    <div style="position:absolute; top:50%; margin-top:-44px;">发
+                                        <br>货
+                                        <br>信
+                                        <br>息</div>
                                 </div>
-                                </form>
-                            </div>
-                        </div>      
-                        <!-- 备注 -->             
-                        <div class="row bg-white b-shadow margin-bottom overhidden">
-                            <div class="col-md-1 panel-title smallPad" style="height:auto; width:36px;">
-                                <div style="position:absolute; top:50%; margin-top:-22px;">备
-                                    <br>注</div>
-                            </div>
-                            <div class="col-md-11 panel-form">
-                                <form action="#" id="second_form" class="form-horizontal" autocomplete="off" novalidate="novalidate">
-                                    <div class="form-body">
-                                        <a name="four"></a>
-                                        <textarea id="remark" name="remark" class="form-control" style="width: 800px;" placeholder="">
-                                           补充如：包车/包船运输
-                                        </textarea>
+                                <div class="col-md-11 panel-form">
+                                    <!-- <form action="#" id="second_form" class="form-horizontal" autocomplete="off" novalidate="novalidate"> -->
+                                    <div class="form-horizontal">
+                                        <div class="form-body">
+                                            
+                                            <div class="col-md-6">
+                                                <div class="panel panel-default">
+                                                   
+                                                    <div class="panel-body form-horizontal">
+                                                        <div class="col-md-12 form-group">
+                                                            <label for="send_index" readonly="true" class="control-label col-md-4"><i class="redMark">*</i>发货城市</label>
+                                                            <div class="col-md-6">
+                                                                <select class="select2" name="startAddress" id="send_index"></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 form-group">
+                                                            <label for="startAddress1" class="control-label col-md-4"><i class="redMark">*</i>发货地址</label>
+                                                            <div class="col-md-6">
+                                                                <input id="startAddress1" name="startAddress1" type="text" class="form-control">   
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 form-group">
+                                                            <label for="planStartTime" class="control-label col-md-4">计划发运时间</label>
+                                                            <div class="col-md-6">
+                                                                <input id="planStartTime" name="planStartTime" type="text" class="form-control date form_date" data-date="2017-01-17" data-date-format="yyyy-mm-dd">                                 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-body form-horizontal">
+                                                        <div class="col-md-12 form-group">
+                                                            <label for="arrive_index" readonly="true" class="control-label col-md-4"><i class="redMark">*</i>收货城市</label>
+                                                            <div class="col-md-6">
+                                                                 <select class="select2" name="arriveAddress" id="arrive_index"></select>  
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 form-group">
+                                                            <label for="arriveAddress1" class="control-label col-md-4"><i class="redMark">*</i>收货地址</label>
+                                                            <div class="col-md-6">
+                                                                <input id="arriveAddress1" name="arriveAddress1" type="text" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                            </div> 
+                            <div class="row bg-white b-shadow margin-bottom overhidden">
+                                <div class="col-md-1 panel-title smallPad" style="height:auto; width:36px;">
+                                    <div style="position:absolute; top:50%; margin-top:-44px;">货
+                                        <br>物
+                                        <br>信
+                                        <br>息</div>
+                                </div>
+                                <div class="col-md-11 panel-form">
+                                    <!-- <form action="#" id="second_form" class="form-horizontal" autocomplete="off" novalidate="novalidate"> -->
+                                    <div class="form-horizontal">
+                                        <div class="form-body">
+                                                <div class="form-group col-md-6">
+                                                    <label for="bidName" class="col-sm-4 control-label">货物名称</label>
+                                                    <div class="col-sm-8">
+                                                      <input type="text" name="bidName" id="bidName" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="bidWeight" class="col-sm-4 control-label">重量（吨）</label>
+                                                    <div class="col-sm-8">
+                                                      <input type="text" name="bidWeight" id="bidWeight" class="form-control">
+                                                    </div>
+                                                </div>
+                                        </div>
 
-                                </form>
+                                    </div>
+                                </div>
                             </div>
-                        </div>  
+                            <div class="row bg-white b-shadow margin-bottom overhidden">
+                                <div class="col-md-1 panel-title smallPad" style="height:auto; width:36px;">
+                                    <div style="position:absolute; top:50%; margin-top:-44px;">运
+                                        <br>输
+                                        <br>信
+                                        <br>息</div>
+                                </div>
+                                <div class="col-md-11 panel-form">
+                                    <!-- <form action="#" id="second_form" class="form-horizontal" autocomplete="off" novalidate="novalidate"> -->
+                                    <div class="form-horizontal">
+                                        <div class="form-body">
+                                            
+                                            <div class="form-group">
+                                                <label class="control-label col-md-2"><span class="required" aria-required="true"> </span>运输方式</label>
+                                                <div class="col-md-3 radio inline" id="use_type">
+                                                    <label>
+                                                        <input type="radio" id="vehicle" name="mainTransType" value="1" checked="checked"> 汽运
+                                                    </label>
+                                                    <label style="padding-left:50px;">
+                                                        <input type="radio" id="carpool" name="mainTransType" value="2"> 船运
+                                                    </label>
+                                                </div>
+                                                <label class="message-info col-md-2"></label>
+                                            </div>
+                                            <div class="carshow">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2"><span class="required" aria-required="true"></span>车货总重</label>
+                                                    <div class="col-md-7" id="carMaximumLoad_div">
+                                                        <input type="hidden" name="carMaximumLoad" id="carMaximumLoad" value="-1"> 
+                                                        <div class="car_type_box">
+                                                            <span class="item active" data-toggle="carMaximumLoad" data-value="-1" data_id="0">不限</span>
+                                                            <span class="item" data-toggle="carMaximumLoad" data-value="49" data_id="1">49吨</span>
+                                                            <span class="item" data-toggle="carMaximumLoad" data-value="46" data_id="2">46吨</span>
+                                                            <span class="item" data-toggle="carMaximumLoad" data-value="43" data_id="3">43吨</span>
+                                                            <span class="item" data-toggle="carMaximumLoad" data-value="41" data_id="4">41吨</span>
+                                                            <span class="item" data-toggle="carMaximumLoad" data-value="40" data_id="5">40吨</span>
+                                                            <span class="item" data-toggle="carMaximumLoad" data-value="35" data_id="6">35吨</span>
+                                                            <span class="item" data-toggle="carMaximumLoad" data-value="32" data_id="7">32吨</span>
+                                                        </div>
+                                                        <!-- <div id="car_type_more">
+                                                        
+                                                        </div> -->
+                                                    </div>
+                                                    <!-- <label id="car_type_info" class="message-info col-md-2 text-danger"></label> -->
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2"><span class="required" aria-required="true"></span>车型</label>
+                                                    <div class="col-md-7" id="truckType_div">
+                                                        <input type="hidden" name="truckType" id="truckType" value="不限"> 
+                                                        <div class="car_type_box">
+                                                            <span class="item active" data-toggle="truckType" data-value="不限" data_id="0">不限</span>
+                                                            <span class="item" data-toggle="truckType" data-value="6轴(6*4+3半挂)" data_id="1">6轴(6*4+3半挂)</span>
+                                                            <span class="item" data-toggle="truckType" data-value="6轴(6*2+3半挂)" data_id="2">6轴(6*2+3半挂)</span>
+                                                            <span class="item" data-toggle="truckType" data-value="5轴(6*4+3半挂)" data_id="3">5轴(6*4+3半挂)</span>
+                                                            <span class="item" data-toggle="truckType" data-value="5轴(6*4+2半挂)" data_id="4">5轴(6*4+2半挂)</span>
+                                                            <span class="item" data-toggle="truckType" data-value="4轴(4*2+3半挂)" data_id="5">4轴(4*2+3半挂)</span>
+                                                            <span class="item" data-toggle="truckType" data-value="4轴(8*4载货车)" data_id="6">4轴(8*4载货车)</span>
+                                                        </div>
+                                                        <!-- <div id="car_type_more">
+                                                        
+                                                        </div> -->
+                                                    </div>
+                                                    <!-- <label id="car_type_info" class="message-info col-md-2 text-danger"></label> -->
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2"><span class="required" aria-required="true"></span>货箱类型</label>
+                                                    <div class="col-md-7" id="containerType_div">
+                                                        <input type="hidden" name="containerType" id="containerType" value="不限"> 
+                                                        <div class="car_type_box">
+                                                            <span class="item active" data-toggle="containerType" data-value="不限" data_id="0">不限</span>
+                                                            <span class="item" data-toggle="containerType" data-value="高栏车" data_id="1">高栏车</span>
+                                                            <span class="item" data-toggle="containerType" data-value="中栏车" data_id="2">中栏车</span>
+                                                            <span class="item" data-toggle="containerType" data-value="低栏车" data_id="3">低栏车</span>
+                                                            <span class="item" data-toggle="containerType" data-value="高低栏车" data_id="4">高低栏车</span>
+                                                            <span class="item" data-toggle="containerType" data-value="仓棚车" data_id="5">仓棚车</span>
+                                                            <span class="item" data-toggle="containerType" data-value="平板车" data_id="6">平板车</span>
+                                                            <span class="item" data-toggle="containerType" data-value="厢式车" data_id="7">厢式车</span>
+                                                            <!-- <span class="item" data_id="6">集装箱</span> -->
+                                                        </div>
+                                                        <!-- <div id="car_type_more">
+                                                        
+                                                        </div> -->
+                                                    </div>
+                                                    <!-- <label id="car_type_info" class="message-info col-md-2 text-danger"></label> -->
+                                                </div>
+                                            </div>
+                                            <div class="shipshow" style="display: none;">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2"><span class="required"  aria-required="true"></span>船舶类型</label>
+                                                    <div class="col-md-7" >
+                                                        <input type="hidden" name="boatType" id="boatType" value="不限"> 
+                                                        <div class="car_type_box">
+                                                            <span class="item active" data-toggle="boatType" data-value="不限" data_id="0">不限</span>
+                                                            <span class="item" data-toggle="boatType" data-value="集装箱船" data_id="1">集装箱船</span>
+                                                            <span class="item" data-toggle="boatType" data-value="散货船" data_id="2">散货船</span>
+                                                            <span class="item" data-toggle="boatType" data-value="滚装船" data_id="3">滚装船</span>
+                                                        </div>
+                                                        <!-- <div id="car_type_more">
+                                                        
+                                                        </div> -->
+                                                    </div>
+                                                    <!-- <label id="car_type_info" class="message-info col-md-2 text-danger"></label> -->
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2"><span class="required"  aria-required="true"></span>吨位</label>
+                                                    <div class="col-md-7" >
+                                                        <input type="hidden" name="shipMaximumLoad" id="shipMaximumLoad" value="-1"> 
+                                                        <div class="car_type_box">
+                                                            <span class="item active" data-toggle="shipMaximumLoad" data-value="-1" data_id="0">不限</span>
+                                                            <span class="item" data-toggle="shipMaximumLoad" data-value="8000" data_id="5">8000吨</span>
+                                                            <span class="item" data-toggle="shipMaximumLoad" data-value="6000" data_id="6">6000吨</span>
+                                                            <span class="item" data-toggle="shipMaximumLoad" data-value="3000" data_id="1">3000吨</span>
+                                                            <span class="item" data-toggle="shipMaximumLoad" data-value="2000" data_id="2">2000吨</span>
+                                                            <span class="item" data-toggle="shipMaximumLoad" data-value="1500" data_id="3">1500吨</span>
+                                                            <span class="item" data-toggle="shipMaximumLoad" data-value="1000" data_id="4">1000吨</span>
+                                                            <!-- <span class="item" data_id="5">500吨</span> -->
+                                                        </div>
+                                                       <!--  <div id="car_type_more">
+                                                       
+                                                       </div> -->
+                                                    </div>
+                                                  <!--   <label id="car_type_info" class="message-info col-md-2 text-danger"></label> -->
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>      
+                            <!-- 备注 -->             
+                            <div class="row bg-white b-shadow margin-bottom overhidden">
+                                <div class="col-md-1 panel-title smallPad" style="height:auto; width:36px;">
+                                    <div style="position:absolute; top:50%; margin-top:-22px;">备
+                                        <br>注</div>
+                                </div>
+                                <div class="col-md-11 panel-form">
+                                    <!-- <form action="#" id="second_form" class="form-horizontal" autocomplete="off" novalidate="novalidate"> -->
+                                    <div class="form-horizontal">
+                                        <div class="form-body">
+                                            <!-- <a name="four"></a> -->
+                                           <!--  <textarea id="remark" name="remark" class="form-control" style="width: 800px;" placeholder="">
+                                              补充如：包车/包船运输
+                                           </textarea> -->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div> 
+                        </form> 
 
                         <div class="form-group" style="margin-top:48px;">
                             <div class="form-actions fluid">
@@ -313,7 +329,7 @@
                                 <label class="col-md-offset-3 col-md-6 text-center" id="button_info"></label>
                             </div>
                         </div>
-                      </form>
+                      
                     </div>
                 </div>
             </div>
@@ -451,20 +467,29 @@ var translateToSelect2 = function(flag){
    }
    return arrs;
 } 
+var BASE_API_URL = "http://localhost/cargocn-cloud-EnqiryQuotation/";
 var login_flg = false;
 $.fn.select2.defaults.set( "theme", "bootstrap" );
 $(document).ready(function() {//#enquiry_form 
     $("#send_enquiry").on('click',function(){
-        debugger;
+        //debugger;
         console.log($("#enquiry_form").serialize());
-       /* $.ajax({
-            url: BASE_API_URL + "/TmpEnqiryMain/addTmpEnqiry.do",
-            type: "POST",
-            dataType: "json",
-            data: $("#enquiry_form").serialize(),
+
+        $.ajax({
+            url: BASE_API_URL + "TmpEnqiryMain/addTmpEnqiry.do",
+            type: "GET",
+            //dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            //contentType:"application/x-www-form-urlencoded",
+            data: $("#enquiry_form").serialize(),//{"bidName":"111"},//
+            //async:false, 
+            // beforeSend: function(x) {
+            //     x.setRequestHeader("Content-Type", "application/json;");
+            // },
             success: function(result) {
+               console.log(result);
                if(result.code==100){
-                  console.log("用户手机号：" + result.data.userTel);
+                  //console.log("用户手机号：" + result.data.userTel);
                   if(result.data.locked = false){ //正常的
                       
                   }else{ //true 未验证通过
@@ -473,14 +498,38 @@ $(document).ready(function() {//#enquiry_form
                }else{
 
                }
+            },
+            error:function(result){
+               console.log(result);
             }
-        });*/
+        });
+      
     })
 
-     $(".car_type_box span.item").on('click',function(){
-         if(!$(this).hasClass('active')){
+    $(".car_type_box span.item").on('click',function(){
+        if(!$(this).hasClass('active')){
             $(this).addClass('active').siblings('span.item').removeClass('active');
-         }
+            var _this = $(this);
+            var dataToggle = _this.data('toggle');
+            var dataValue = _this.data('value');
+            switch (dataToggle) {
+                case "carMaximumLoad":
+                    $("#carMaximumLoad").val(dataValue);
+                    break;
+                case "truckType":
+                    $("#truckType").val(dataValue);
+                    break;
+                case "containerType":
+                    $("#containerType").val(dataValue);
+                    break;
+                case "boatType":
+                    $("#boatType").val(dataValue);
+                    break;
+                case "shipMaximumLoad":
+                    $("#shipMaximumLoad").val(dataValue);
+                    break;
+            }
+        }
      })
 
     //initialCookie();
