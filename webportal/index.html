@@ -213,7 +213,7 @@
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-md-12" style="margin-top:22px;">
-                                                                        <a href="/enquiry.html" type="button" class="btn btn-primary btn-lg btn-block" style="color:#fff;">在线询价</a>
+                                                                        <a href="javascript:void(0);" type="button" class="btn btn-primary btn-lg btn-block" id="start_send" style="color:#fff;">在线询价</a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row" style="font-size:12px">
@@ -301,7 +301,7 @@
                                       <div class="barnav">
                                          <ul>
                                              <li><i class="fa fa-circle icon-white" ></i>精准货源，一目了然</li>
-                                             <li><i class="fa fa-circle icon-white" ></i>精准货源，一目了然</li>
+                                             <li><i class="fa fa-circle icon-white" ></i>认证货主，保障货款</li>
                                              <li><i class="fa fa-circle icon-white" ></i>提现方便，查询快捷</li>
                                              <li><i class="fa fa-circle icon-white" ></i>加油轮胎，保险换车</li>
                                          </ul>
@@ -491,7 +491,7 @@
     </div>
   </div>
 </div>
-<script type='text/javascript' src='../vendor/forkit/js/forkit.js'></script>
+<!-- <script type='text/javascript' src='../vendor/forkit/js/forkit.js'></script> -->
 <script type='text/javascript' src='../vendor/js-cookie/src/js.cookie.js'></script>
 <script type='text/javascript' src='../build/js/production.js'></script>
 <script type='text/javascript' src='../build/js/chengda.js'></script>
@@ -500,29 +500,23 @@
     $(function () { $("[data-toggle='tooltip']").tooltip(); });
 </script> -->
 <script>
-
 function initialCookie() {
-    var cargocn_domain = 'localhost:3000';
-    var cargocn_name = 'cargocn_name';
-    var cargocn_value = 'cargocn_value';
-    Cookies.set(cargocn_name,cargocn_value, { path:'/',domain:cargocn_domain});
-    //Cookies.set(cargocn_name,cargocn_value,{path:'/'});
-    //Cookies.set('cargocn_name', 'cargocn_value11');
-    //console.log(Cookies.get('cargocn_name'));
-    Cookies.remove('cargocn_name');
+    myCookie.add("send_index",$("#send_index").val(),{"expires":5});
+    myCookie.add("arrive_index",$("#arrive_index").val(),{"expires":5}); 
 }
 
 var translateToSelect2 = function(flag){
    var iobject = window.cargocnData.zone;
    var arrs = [];
    if(flag==0){
-     arrs.push({"id":0, "text":"请选择发货地址"});
+     arrs.push({"id":"请选择发货地址", "text":"请选择发货地址"});
    }else{
-     arrs.push({"id":0, "text":"请选择到达地址"});
+     arrs.push({"id":"请选择到达地址", "text":"请选择到达地址"});
    }
    
    for(var i=0;i<iobject.length;i++){
-      arrs.push({"id": iobject[i].codeId, "text":iobject[i].codeName});
+      //arrs.push({"id": iobject[i].codeId, "text":iobject[i].codeName});
+      arrs.push({"id": iobject[i].codeName, "text":iobject[i].codeName});
    }
    return arrs;
 }
@@ -530,9 +524,6 @@ var translateToSelect2 = function(flag){
 $.fn.select2.defaults.set( "theme", "bootstrap" );
     /*$(function () { $("[data-toggle='tooltip']").tooltip(); });*/
 $(document).ready(function() {
-
-    initialCookie();
-
     //findMaxZIndex('body');
 
     $("#send_index").select2({
@@ -548,6 +539,8 @@ $(document).ready(function() {
         width:'100%',
         data:translateToSelect2(1)
     });
+
+    initialCookie();
 
     $("#headerAccount a").on("click", function(a) {
         //a.preventDefault(),
@@ -567,11 +560,29 @@ $(document).ready(function() {
             //$(i).parent("li").addClass("active").siblings().removeClass("active")
         })
     })
-   //分享
-$(".wxshare").on("click",function() {
-         
-          $(".wemcn").toggle();
- });
+
+    $("#start_send").on("click",function(){
+        var send_index = $("#send_index").val();
+        var arrive_index = $("#arrive_index").val();
+        if(send_index=="请选择发货地址"){
+           alert("请选择发货地址");
+           return;
+        }
+        if(arrive_index=="请选择收货地址"){
+           alert("请选择收货地址");
+           return;
+        }
+        myCookie.add("send_index",$("#send_index").val(),{"expires":5});
+        myCookie.add("arrive_index",$("#arrive_index").val(),{"expires":5}); 
+        if(myCookie.get("send_index") && myCookie.get("arrive_index")){
+           window.location.href = "enquiry.html";
+        }
+    })
+    //分享
+    $(".wxshare").on("click",function() {
+             
+              $(".wemcn").toggle();
+     });
 })
 
 $(function(){
