@@ -25,7 +25,9 @@
     <script src="../vendor/jquery/jquery.js"></script>
     <script src="../vendor/jquery-migrate/jquery-migrate.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="build/js/config.js"></script>
     <script src="build/js/heads.js"></script>
+    <script src="build/js/myCookie.js"></script>
     <script src="../vendor/select2/dist/js/select2.full.min.js"></script>
     <script src="../vendor/select2/dist/js/i18n/zh-CN.js"></script>
     <script type='text/javascript' src='../vendor/js-cookie/src/js.cookie.js'></script>
@@ -334,36 +336,73 @@
                 </div>
             </div>
             <!-- 登录 -->
-            <div class="modal fade" id="tologin" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog modal-sm">
-                <div class="modal-content" style="margin-top:250px;background: rgba(83, 82, 82, 0.38);">
-                  <div class="modal-body">
-                      <form id="contactForm" method="POST" autocomplete="off">
-                        <div class="row">
-                            <div class="input-icon left" style="margin:15px"> <!-- <i class="fa fa-user"></i> -->
-                                <input style="border:0;" type="text" class="form-control" name="userName" id="send_index" placeholder="请输入用户名" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-icon left" style="margin:15px;"> <!-- <i class="fa fa-unlock-alt"></i> -->
-                                <input style="border:0;" type="text" class="form-control" name="passworder" id="arrive_index" placeholder="请输入密码" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12" style="margin-top:22px;">
-                                <input id="index_send" type="submit" value="登录" class="btn btn-primary btn-lg btn-block" data-loading-text="登录" style="border-radius: 4px">
-                            </div>
-                        </div>
-                        <div class="row" style="font-size:12px">
-                            <div class="form-group" style="margin-top:15px">
-                                <div class="col-md-12 text-center" id="banner_send_info" style="color:#fff;">
-                                  没有账号？ <a href="" title="免费注册" style="color:#fff;">免费注册</a>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+            <div class="modal fade" id="shareOrder" data-backdrop="static" data-keyboard=false tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-md">
+                <div class="modal-content" style="margin-top:250px;">
+                  <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <div class="row">
+                       <div class="col-md-6"><h4><i class="glyphicon glyphicon-ok green"></i>询价单提交成功</h4></div>
+                       <div class="col-md-5"><h4>发货单号：4546890</h4></div>
+                   </div>
                   </div>
-                  
+                  <div class="modal-body">
+                    <div class="row"> 
+                        <div class="row-contain">                        
+                            <div class="col-md-12">
+                                <h2 style="color:#148cdc">上海——南京</h2>
+                                <h4><i class="fa fa-cube gray"></i><span>钢铁：5000吨</span></h4>
+                                <h4><i class="glyphicon glyphicon-time gray"></i><span>计划到达时间：2017-03-05</span></h4>
+                            </div> 
+                            
+                            <div class="col-md-12">
+                                <button type="button" class="btn border-default btn-lg">再下一单</button>
+                                <button type="button" class="btn border-success btn-social btn-lg wxshare"><i class="fa fa-wechat icon-white"></i> 分享至微信</button>
+                            </div>
+                            <div class="wemcn">
+                              <div id="ewm" class="ewmDiv clearfix">
+                                 <!--  <img id="ewmimg" class="ewmimg" src="http://cargocn.com/images/shipper_big.png"> -->
+                                  <div id="qrcode"></div>
+                                  <div class="rwmtext"> 
+                                      <p>扫一扫</p >
+                                      <p>把询价详情</p >
+                                      <p>分享给微信好友</p >
+                                  </div>
+                              </div>
+                              <i class="fa fa-caret-down fa-2x"></i>
+                            </div>  
+                            <!-- <div class="col-md-12 shareHide" id="erweima"><img src="images/er_03.jpg"></div>   --> 
+                            <div class="col-md-12 social-icon">                             
+                                <img src="images/cargo.png" alt="">                        
+                                <img src="images/cargocn_driver.png" alt="" width="60" height="60" class="img-er">
+                                更多信息尽在货先生App,请扫码下载
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="display:none">
+                        <!-- <div class="col-md-12" style="margin-top:22px;">
+                            <button type="button" class="btn btn-primary">分享</button>
+                        </div> -->
+                        <div class="col-sm-6">
+                             <p>分享给微信好友，让更多的人看到您的询价</p>
+                             <div class="socialShare" style="margin-left: 100px;" >
+                                 <a href="javascript:;" class="social-share-icon icon-wechat"></a>
+                            </div>
+                            <p>鼠标悬停图标，即可扫码分享</p>
+                        </div>
+                         <div class="col-md-6">
+                            <div class="col-md-12">
+                                更多信息尽在货先生App
+                            </div>
+                            <div class="col-md-12">
+                                <img src="images/ship_android.png" style="height: 100px;width:100px;" alt="">
+                            </div>
+                            <div class="col-md-12">请扫码下载
+                            </div>
+                        </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -380,38 +419,36 @@
                       
                   </div>
                   <div class="modal-body">
-                      <form id="contactForm" method="POST" autocomplete="off">
                         <div class="row"> 
-                        <div class="row-contain">                        
-                            <div class="col-md-12">
-                                <h2 style="color:#148cdc">上海——南京</h2>
-                                <h4><i class="fa fa-cube gray"></i>钢铁：5000吨</h4>
-                                <h4><i class="glyphicon glyphicon-time gray"></i>计划到达时间：2017-03-05</h4>
-                            </div> 
-                            
-                            <div class="col-md-12">
-                                <button type="button" class="btn border-default btn-lg">再下一单</button>
-                                <button type="button" class="btn border-success btn-social btn-lg wxshare"><i class="fa fa-wechat icon-white"></i> 分享至微信</button>
-                            </div>
-                            <div class="wemcn">
-                              <div id="ewm" class="ewmDiv clearfix">
-                                  <img id="ewmimg" class="ewmimg" src="http://cargocn.com/images/shipper_big.png">
-                                  <div class="rwmtext"> 
-                                      <p>扫一扫</p >
-                                      <p>把订单详情</p >
-                                      <p>分享给微信好友</p >
+                            <div class="row-contain">                        
+                                <div class="col-md-12">
+                                    <h2 style="color:#148cdc">上海——南京</h2>
+                                    <h4><i class="fa fa-cube gray"></i>钢铁：5000吨</h4>
+                                    <h4><i class="glyphicon glyphicon-time gray"></i>计划到达时间：2017-03-05</h4>
+                                </div> 
+                                
+                                <div class="col-md-12">
+                                    <button type="button" class="btn border-default btn-lg">再下一单</button>
+                                    <button type="button" class="btn border-success btn-social btn-lg wxshare"><i class="fa fa-wechat icon-white"></i> 分享至微信</button>
+                                </div>
+                                <div class="wemcn">
+                                  <div id="ewm" class="ewmDiv clearfix">
+                                      <img id="ewmimg" class="ewmimg" src="http://cargocn.com/images/shipper_big.png">
+                                      <div class="rwmtext"> 
+                                          <p>扫一扫</p >
+                                          <p>把订单详情</p >
+                                          <p>分享给微信好友</p >
+                                      </div>
                                   </div>
-                              </div>
-                              <i class="fa fa-caret-down fa-2x"></i>
-                            </div>  
-                            <!-- <div class="col-md-12 shareHide" id="erweima"><img src="images/er_03.jpg"></div>   --> 
-                            <div class="col-md-12 social-icon">                             
-                                <img src="images/cargo.png" alt="">                        
-                                <img src="images/cargocn_driver.png" alt="" width="60" height="60" class="img-er">
-                                更多信息尽在货先生App,请扫码下载
+                                  <i class="fa fa-caret-down fa-2x"></i>
+                                </div>  
+                                <!-- <div class="col-md-12 shareHide" id="erweima"><img src="images/er_03.jpg"></div>   --> 
+                                <div class="col-md-12 social-icon">                             
+                                    <img src="images/cargo.png" alt="">                        
+                                    <img src="images/cargocn_driver.png" alt="" width="60" height="60" class="img-er">
+                                    更多信息尽在货先生App,请扫码下载
+                                </div>
                             </div>
-
-                        </div>
                         </div>
 
                         <div class="row" style="display:none">
@@ -437,9 +474,7 @@
                             </div>
                            
                         </div>
-                    </form>
                   </div>
-                  
                 </div>
               </div>
             </div>
@@ -485,21 +520,16 @@ $(document).ready(function() {//#enquiry_form
     $("#send_enquiry").on('click',function(){
         //debugger;
         console.log($("#enquiry_form").serialize());
-
-        $.ajax({
+        /*$.ajax({
             url: BASE_API_URL + "TmpEnqiryMain/addTmpEnqiry.do",
             type: "GET",
             //dataType: "json",
             contentType: "application/json; charset=utf-8",
             //contentType:"application/x-www-form-urlencoded",
-            data: $("#enquiry_form").serialize(),//{"bidName":"111"},//
-            //async:false, 
-            // beforeSend: function(x) {
-            //     x.setRequestHeader("Content-Type", "application/json;");
-            // },
+            data: $("#enquiry_form").serialize(),
             success: function(result) {
                console.log(result);
-               if(result.code==100){//id=779, enquiryBillId="T1702171151595159"
+               if(result.code==100){
                   //console.log("用户手机号：" + result.data.userTel);
                   if(result.data.locked = false){ //正常的
                       
@@ -513,8 +543,10 @@ $(document).ready(function() {//#enquiry_form
             error:function(result){
                console.log(result);
             }
-        });
-      
+        });*/
+        $('#shareOrder').modal('show');
+
+
     })
 
     $(".car_type_box span.item").on('click',function(){
@@ -575,15 +607,15 @@ $(document).ready(function() {//#enquiry_form
         data:translateToSelect2(1)
     });
 
-    var send_index = Cookies.get("send_index");
-    var arrive_index = Cookies.get("arrive_index");
+    // var send_index = Cookies.get("send_index");
+    // var arrive_index = Cookies.get("arrive_index");
     
-    if(send_index){
-        $("#send_index").val(send_index).trigger();
-    }
-     if(arrive_index){
-        $("#arrive_index").val(arrive_index).trigger();
-    }
+    // if(send_index){
+    //     $("#send_index").val(send_index).trigger();
+    // }
+    //  if(arrive_index){
+    //     $("#arrive_index").val(arrive_index).trigger();
+    // }
     
 
     $('.form_date').datetimepicker({
@@ -634,12 +666,18 @@ $(function(){
   };
 
   $('.socialShare').share($config);
+  $('#qrcode').qrcode({
+    render:"canvas",
+    width:50,
+    height:50,
+    text: "http://www.cargocn.com"
+  });
 });
 
 //分享
 $(".wxshare").on("click",function() {
-      //$(".shareHide").toggle();
-      $(".wemcn").toggle();
+  //$(".shareHide").toggle();
+  $(".wemcn").toggle();
  });
 </script>
 
