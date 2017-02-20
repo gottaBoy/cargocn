@@ -48,6 +48,7 @@
 </div>
 <!-- <script src="js/login.js"></script> -->
 <script type="text/javascript">
+var BASE_API_URL = "http://localhost/cargocn-cloud-server/";
 /*获取验证码*/
 var isPhone = 1;
 $("#getCode").on("click",function(){
@@ -102,7 +103,7 @@ function resetCode(){
     },1000);
 }
 
-var BASE_API_URL = "http://localhost/cargocn-cloud-server/";
+
 $("#getCode1").on("click",function(){
     //debugger;
     var userPhone = $("#userPhone").val();
@@ -121,29 +122,38 @@ $("#getCode1").on("click",function(){
         }
     });
 })
-$("#logining").on("click",function(){
-    var userPhone = $("#userPhone").val();
-    var verifyCode = $("#verifyCode").val();
-    if(userPhone=="" || userPhone==null) return;
-    if(verifyCode=="" || verifyCode==null) return;
-    $.ajax({
-        url: BASE_API_URL + "/carfreerWebLogin.do",
-        type: "POST",
-        dataType: "json",
-        data: $("#logins_form").serialize(),
-        success: function(result) {
-           //console.log(data);
-           if(result.code==100){
-              console.log("用户手机号：" + result.data.userTel);
-              if(result.data.locked = false){ //正常的
-                  
-              }else{ //true 未验证通过
-                  
-              }
-           }else{
 
-           }
-        }
-    });
+$("#logining").on("click",function(){
+    //var userPhone = $("#phone").val();
+    checkPhone(); //验证手机号码
+    var verifyCode = $("#verifyCode").val();
+    if(verifyCode==""){
+        alert('请输入验证码');
+        isPhone = 0;
+        return;
+    };
+    // $.ajax({
+    //     url: BASE_API_URL + "/carfreerWebLogin.do",
+    //     type: "POST",
+    //     dataType: "json",
+    //     data: $("#logins_form").serialize(),
+    //     success: function(result) {
+    //        //console.log(data);
+    //        if(result.code==100){
+    //           console.log("用户手机号：" + result.data.userTel);
+    //           if(result.data.locked = false){ //正常的
+    //               myCookie.add("userTel",result.data.userTel,{"expires":5});
+    //               console.log("userTel=" + myCookie.get("userTel"));
+    //           }else{ //true 未验证通过
+                  
+    //           }
+    //        }else{
+
+    //        }
+    //     }
+    // });
+    myCookie.add("userTel","admin",{"expires":5});
+    console.log("userTel=" + myCookie.get("userTel"));
+    $("#pop_login_out").modal("hide");
 })
 </script>
