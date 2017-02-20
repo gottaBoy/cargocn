@@ -8,7 +8,7 @@
                 <div class="col-md-8">
                     <div class="input-icon right">
                         <i class="fa"></i>
-                        <input type="text" class="form-control" name="userPhone" id="userPhone" placeholder="请输入手机号">
+                        <input type="text" class="form-control" name="userPhone" id="phone" placeholder="请输入手机号">
                     </div>
                 </div>
             </div>
@@ -21,7 +21,8 @@
                         <i class="fa"></i>
                         <input type="text" class="form-control" name="verifyCode" id="verifyCode" placeholder="请输入验证码">
                         <span class="input-group-btn">
-                           <button class="btn btn-default" type="button" id="getValidateCode">获取验证码</button>
+                           <button class="btn btn-default get-code" type="button" id="getCode">获取验证码</button>
+                           <button class="btn btn-default reset-code" type="button" id="resetCode" style="display:none;"><span id="code_second">60</span>秒后重发</button>
                         </span> 
                     </div>
                 </div>
@@ -47,8 +48,62 @@
 </div>
 <!-- <script src="js/login.js"></script> -->
 <script type="text/javascript">
+/*获取验证码*/
+var isPhone = 1;
+$("#getCode").on("click",function(){
+    checkPhone(); //验证手机号码
+    if(isPhone){
+        resetCode(); //倒计时
+    }else{
+        $('#phone').focus();
+    }
+});
+function getCode(e){
+    checkPhone(); //验证手机号码
+    if(isPhone){
+        resetCode(); //倒计时
+    }else{
+        $('#phone').focus();
+    }
+    
+}
+//验证手机号码
+function checkPhone(){
+    var phone = $('#phone').val();
+    var pattern = /^1[0-9]{10}$/;
+    isPhone = 1;
+    if(phone == '') {
+        alert('请输入手机号码');
+        isPhone = 0;
+        return;
+    }
+    if(!pattern.test(phone)){
+        alert('请输入正确的手机号码');
+        isPhone = 0;
+        return;
+    }
+}
+//倒计时
+function resetCode(){
+    $('#getCode').hide();
+    $('#code_second').html('60');
+    $('#resetCode').show();
+    var second = 60;
+    var timer = null;
+    timer = setInterval(function(){
+        second -= 1;
+        if(second >0 ){
+            $('#code_second').html(second);
+        }else{
+            clearInterval(timer);
+            $('#getCode').show();
+            $('#resetCode').hide();
+        }
+    },1000);
+}
+
 var BASE_API_URL = "http://localhost/cargocn-cloud-server/";
-$("#getValidateCode").on("click",function(){
+$("#getCode1").on("click",function(){
     //debugger;
     var userPhone = $("#userPhone").val();
     if(userPhone=="" || userPhone==null) return;
@@ -56,8 +111,13 @@ $("#getValidateCode").on("click",function(){
         url: BASE_API_URL + "/getUserLoginCode.do?userPhone=" + userPhone,
         type: "POST",
         dataType: "json",
-        success: function(data) {
-           console.log(data);
+        success: function(result) {
+           console.log(result);
+           if(result.code==100){
+               
+           }else{
+              console.log("获取验证码成功！");
+           }
         }
     });
 })
