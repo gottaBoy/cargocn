@@ -124,14 +124,18 @@ $("#getCode1").on("click",function(){
 })
 
 $("#logining").on("click",function(){
-    //var userPhone = $("#phone").val();
     checkPhone(); //验证手机号码
-    var verifyCode = $("#verifyCode").val();
-    if(verifyCode==""){
-        alert('请输入验证码');
-        isPhone = 0;
+    if(isPhone){
+        var verifyCode = $("#verifyCode").val();
+        if(verifyCode==""){
+            alert('请输入验证码');
+            isPhone = 0;
+            return;
+        }
+    }else{
         return;
-    };
+    }
+   
     // $.ajax({
     //     url: BASE_API_URL + "/carfreerWebLogin.do",
     //     type: "POST",
