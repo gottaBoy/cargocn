@@ -162,17 +162,25 @@
   color: #999;
 }
 .now_data .user {
-  width: 120px;
+  width: 200px;
 }
 .now_data .wu {
-  width: 200px;
+  width: 160px;
 }
 .now_data .wu i {
   color: #e13041;
 }
-.now_data .state {
+.now_data .state1 {
   width: 90px;
   color: #34b796 !important;
+}
+.now_data .state2 {
+  width: 90px;
+  color: #D49608 !important;
+}
+.now_data .state3 {
+  width: 90px;
+  color: #159ae6 !important;
 }
 .border-blue {
   width: 180px;
@@ -201,7 +209,7 @@
 }
 .box-content {
   background-color: #eee;
-  width: 350px;
+  width: 300px;
   border-radius: 5px;
   margin-top: 60px;
   margin-left:60px;
@@ -209,22 +217,21 @@
 .wemcn {
   display: none;
   font-size: 12px;
-  top: -55px;
+  top: -35px;
   position: absolute;
-  right: -100px;
+  right: -120px;
   z-index: 10;
 }
 .wemcn .ewmDiv {
   width: 275px;
-  height: 120px;
   padding: 10px;
   background: #fff;
   border: 2px solid #efefef;
   border-radius: 5px;
 }
 .wemcn .ewmDiv img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   float: left;
   display: inline;
 }
@@ -232,7 +239,7 @@
   width: 145px;
   color: #000;
   text-indent: 8px;
-  padding-top: 20px;
+  padding-top: 10px;
   float: left;
   display: inline;
 }
