@@ -69,30 +69,31 @@ CHENGDA.www.index.prototype.loginStatus = function() {
         }
     }
     var setUser = function(page_name) {
-        if (myCookie('access_token')) {
-            var user_data = JSON.parse(Base64.decode(myCookie('access_token')));
-            if(user_data.data.check_status==0){
-                /* var userHtml="user.html?target=user_data.html"; */
-                var userHtml="user.html";
-            }else{
-                var userHtml="user.html";
-            }
+        if (myCookie.get('access_token')) {
+            // var user_data = JSON.parse(Base64.decode(myCookie.get('access_token')));
+            // if(user_data.data.check_status==0){
+            //      var userHtml="user.html?target=user_data.html"; 
+            //     var userHtml="user.html";
+            // }else{
+            //     var ="user.html";
+            // }
+            var userHtml = "/";
             $("#headerAccount a").attr({
                 href: userHtml
-            }).html('<i class="fa fa-user"></i> '+(user_data.data.name?user_data.data.name:user_data.data.mobile));
+            }).html(myCookie.get('access_token'));//'<i class="fa fa-user"></i> '+(user_data.data.name?user_data.data.name:user_data.data.mobile));
             $('#logout a').attr({
                 href: 'logout.html'
-            }).html('<i class="fa fa-sign-out"></i> 退出');
+            }).html('退出');//<i class="fa fa-sign-out"></i> 退出');
             $('#index_login_box').hide();
-            quickSend();
+            //quickSend();
         } else {
             $('#index_login_box').show();
             $('#headerAccount a').attr({
                 href: 'login.html'
-            }).html('<i class="fa fa-sign-in"></i> 登录');
+            }).html('登录');//('<i class="fa fa-sign-in"></i> 登录');
             $('#logout a').attr({
                 href: 'register.html'
-            }).html('<i class="fa fa-user-plus"></i> 申请加入');
+            }).html('注册');//('<i class="fa fa-user-plus"></i> 申请加入');
             $('#logout').off('click');
         }
         userActive();
@@ -101,27 +102,41 @@ CHENGDA.www.index.prototype.loginStatus = function() {
         $('#logout a').on('click', function(event) {
             event.preventDefault();
             if ($(this).attr('href') == 'logout.html') {
-                var token = getCookie('access_token')?JSON.parse(Base64.decode(getCookie('access_token'))).data.token:null;
-                $.ajax({
-                        url: BASE_API_URL+'/user/logout',
-                        type: 'POST', 
-                        dataType: 'JSON',
-                        contentType: "text/plain",
-                        data: {token: token},
-                    })
-                    .done(function(back) {
-                        if (back.status == 'Y') {
-                            $('#headerAccount a').attr({
-                                href: 'login.html'
-                            }).html('<i class="fa fa-sign-in"></i> 登录');
-                            $('#logout a').attr({
-                                href: 'register.html'
-                            }).html('<i class="fa fa-user-plus"></i> 申请加入');
-                            $('#logout').off('click');
-                            clearCookie('access_token');
-                            window.location.href = 'index.html';
-                        };
-                    });
+                ////var token = getCookie('access_token')?JSON.parse(Base64.decode(getCookie('access_token'))).data.token:null;
+                // var username = myCookie.get('access_token');
+                // $.ajax({
+                //         url: '/cargocn-cloud-server/appLogout.do',//?username=' + getCookie('access_token'),
+                //         type: 'POST', 
+                //         dataType: 'JSON',
+                //         contentType: "text/plain",
+                //         data: {username: username},
+                //     })
+                //     .done(function(result) {
+                //         if (result.code=='100') {
+                //             $('#headerAccount a').attr({
+                //                 href: 'login.html'
+                //             }).html('登录');//('<i class="fa fa-sign-in"></i> 登录');
+                //             $('#logout a').attr({
+                //                 href: 'register.html'
+                //             }).html('注册');//('<i class="fa fa-user-plus"></i> 申请加入')
+                //             $('#logout').off('click');
+                //             myCookie.delete('access_token');
+                //             //clearCookie('access_token');
+                //             window.location.href = 'index.html';
+                //         };
+                //     });
+                $('#headerAccount a').attr({
+                    href: 'login.html'
+                }).html('登录');//('<i class="fa fa-sign-in"></i> 登录');
+                $('#logout a').attr({
+                    href: 'register.html'
+                }).html('注册');//('<i class="fa fa-user-plus"></i> 申请加入')
+                $('#logout').off('click');
+                myCookie.delete('access_token');
+                //clearCookie('access_token');
+                debugger;
+                console.log('用户退出');
+                window.location.href = 'index.html';
             } else {
                 //注册pop窗口
                 $('#pop_login_out').modal('toggle');
@@ -368,8 +383,8 @@ CHENGDA.www.index.prototype.loginStatus = function() {
     return {
         init: function(){
             console.log("init:start!");
-            //setUser();
-            userActive();
+            setUser();
+            ////userActive();
             // pageCheck();
             //loginGo();
             popLoginOut();

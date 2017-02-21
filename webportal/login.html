@@ -46,7 +46,7 @@
       </div> -->
     </form>
 </div>
-<!-- <script src="js/login.js"></script> -->
+<script src="build/js/login.js"></script>
 <script type="text/javascript">
 var BASE_API_URL = "/cargocn-cloud-server/";
 /*获取验证码*/
@@ -162,8 +162,8 @@ $("#logining").on("click",function(){
             if(result.code==100){
               console.log("用户手机号：" + result.data.userTel);
               //if(result.data.locked = false){ //正常的
-                  myCookie.add("userTel",result.data.userTel,{"expires":5});
-                  console.log("userTel=" + myCookie.get("userTel"));
+                  myCookie.add("access_token",result.data.userTel,{"expires":5});
+                  console.log("access_token=" + myCookie.get("userTel"));
                   //将登录换为登出
                   $("#pop_login_out").modal("hide");
               /*}else{ //true 未验证通过
