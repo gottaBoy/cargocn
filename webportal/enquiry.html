@@ -585,7 +585,7 @@ $(document).ready(function() {//#enquiry_form
             //contentType:"application/x-www-form-urlencoded",
             data: $("#enquiry_form").serialize(),
             success: function(result) {
-               console.log(result);
+               console.log("result"+result);
                if(result.code==100){
                   //console.log("用户手机号：" + result.data.userTel);
                   showOrder(result.data);
