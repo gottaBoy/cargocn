@@ -1,0 +1,1 @@
+{"version":3,"sources":["a.css"],"names":[],"mappings":"AACA,OACI,MAAA,KAEJ,YAMA,YAHA,UAFE,MAAA,IAQF,MACI,QAAA,YAAA,QAAA","file":"a.css","sourcesContent":["/* a.css */\r\nbody a{\r\n    color:pink;\r\n}\r\n.import .a1 {\r\n  color: red;\r\n}\r\n.import a {\r\n  color: red;\r\n}\r\n.import .b1 {\r\n  color: red;\r\n}\r\n.demo {\r\n    display:flex;\r\n}"]}
