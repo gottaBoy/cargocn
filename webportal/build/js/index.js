@@ -98,7 +98,7 @@ CHENGDA.www.index.prototype.loginStatus = function() {
         userActive();
     };
     var userActive = function() {
-        /*$('#logout a').on('click', function(event) {
+        $('#logout a').on('click', function(event) {
             event.preventDefault();
             if ($(this).attr('href') == 'logout.html') {
                 var token = getCookie('access_token')?JSON.parse(Base64.decode(getCookie('access_token'))).data.token:null;
@@ -127,7 +127,7 @@ CHENGDA.www.index.prototype.loginStatus = function() {
                 $('#pop_login_out').modal('toggle');
                 $('#login_out_box a').eq(1).trigger('click');
             }
-        });*/
+        });
 
         $('#headerAccount a').on('click', function(event) {
             //debugger;
