@@ -133,31 +133,36 @@ $("#logining").on("click",function(){
             return;
         }
     }else{
+        alert('请输入正确的手机号码');
+        $('#phone').focus();
         return;
     }
    
-    // $.ajax({
-    //     url: BASE_API_URL + "/carfreerWebLogin.do",
-    //     type: "POST",
-    //     dataType: "json",
-    //     data: $("#logins_form").serialize(),
-    //     success: function(result) {
-    //        //console.log(data);
-    //        if(result.code==100){
-    //           console.log("用户手机号：" + result.data.userTel);
-    //           if(result.data.locked = false){ //正常的
-    //               myCookie.add("userTel",result.data.userTel,{"expires":5});
-    //               console.log("userTel=" + myCookie.get("userTel"));
-    //           }else{ //true 未验证通过
-                  
-    //           }
-    //        }else{
+    $.ajax({
+        url: BASE_API_URL + "/carfreerWebLogin.do",
+        type: "POST",
+        dataType: "json",
+        data: $("#logins_form").serialize(),
+        success: function(result) {
+           //console.log(data);
+           if(result.code==100){
+              console.log("用户手机号：" + result.data.userTel);
+              //if(result.data.locked = false){ //正常的
+                  myCookie.add("userTel",result.data.userTel,{"expires":5});
+                  console.log("userTel=" + myCookie.get("userTel"));
+                  //将登录换为登出
+                  $("#pop_login_out").modal("hide");
 
-    //        }
-    //     }
-    // });
-    myCookie.add("userTel","admin",{"expires":5});
-    console.log("userTel=" + myCookie.get("userTel"));
-    $("#pop_login_out").modal("hide");
+              /*}else{ //true 未验证通过
+                  
+              }*/
+           }else{
+
+           }
+        }
+    });
+    // myCookie.add("userTel","admin",{"expires":5});
+    // console.log("userTel=" + myCookie.get("userTel"));
+    // $("#pop_login_out").modal("hide");
 })
 </script>

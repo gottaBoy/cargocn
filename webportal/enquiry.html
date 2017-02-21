@@ -116,7 +116,7 @@
                                                         <div class="col-md-12 form-group">
                                                             <label for="planStartTime" class="control-label col-md-4">计划发运时间</label>
                                                             <div class="col-md-6">
-                                                                <input id="planStartTime" name="planStartTime" type="text" class="form-control date form_date" data-date="2017-01-17" data-date-format="yyyy-mm-dd">                                 
+                                                                <input id="planStartTime" name="planStartTime" type="text" class="form-control date form_date" data-date="2017-02-20" data-date-format="yyyy-mm-dd">                                 
                                                             </div>
                                                         </div>
                                                     </div>
@@ -313,9 +313,9 @@
                                     <div class="form-horizontal">
                                         <div class="form-body">
                                             <!-- <a name="four"></a> -->
-                                           <!--  <textarea id="remark" name="remark" class="form-control" style="width: 800px;" placeholder="">
+                                           <textarea id="remark" name="remark" class="form-control" style="width: 800px;" placeholder="">
                                               补充如：包车/包船运输
-                                           </textarea> -->
+                                           </textarea>
                                         </div>
 
                                     </div>
@@ -343,16 +343,16 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                    <div class="row">
                        <div class="col-md-6"><h4><i class="glyphicon glyphicon-ok green"></i>询价单提交成功</h4></div>
-                       <div class="col-md-5"><h4>发货单号：4546890</h4></div>
+                       <div class="col-md-5"><h4 id="orderNumber">发货单号：4546890</h4></div>
                    </div>
                   </div>
                   <div class="modal-body">
                     <div class="row"> 
                         <div class="row-contain">                        
                             <div class="col-md-12">
-                                <h2 style="color:#148cdc">上海——南京</h2>
-                                <h4><i class="fa fa-cube gray"></i><span>钢铁：5000吨</span></h4>
-                                <h4><i class="glyphicon glyphicon-time gray"></i><span>计划到达时间：2017-03-05</span></h4>
+                                <h2 style="color:#148cdc" id="order_routine">上海——南京</h2>
+                                <h4><i class="fa fa-cube gray"></i><span id="order_object">钢铁：5000吨</span></h4>
+                                <h4><i class="glyphicon glyphicon-time gray"></i><span id="order_time">计划到达时间：2017-03-05</span></h4>
                             </div> 
                             
                             <div class="col-md-12">
@@ -362,7 +362,7 @@
                             <div class="wemcn">
                               <div id="ewm" class="ewmDiv clearfix">
                                  <!--  <img id="ewmimg" class="ewmimg" src="http://cargocn.com/images/shipper_big.png"> -->
-                                  <div id="qrcode"></div>
+                                  <div id="qrcode" style="float: left;"></div>
                                   <div class="rwmtext"> 
                                       <p>扫一扫</p >
                                       <p>把询价详情</p >
@@ -498,13 +498,69 @@
 <script src="../vendor/social-share.js/dist/js/share.min.js"></script>
 <script src="js/tm-scripts.js"></script>
 <script>
+var showOrder = function(order){
+   $("#orderNumber").html("发货单号：" + order.enquiryBillId); 
+   $("#order_routine").html(order.startAddress + "——" + order.arriveAddress);
+   $("#order_time").html("计划到达时间：" + order.planArriveTime);
+   $("#order_object").html( order.bidName + ":" + order.bidWeight);//bidNum,bidVolume,quoteEndTime
+}
+
+var renderOrder = function(id){
+    $('#shareOrder').modal('show');
+     //分享
+    $(".wxshare").on("click",function() {
+      $(".wemcn").toggle();
+    });
+     
+    var qrcode_setting = {
+        // render method: 'canvas', 'image' or 'div'
+        render: 'canvas',
+        // version range somewhere in 1 .. 40
+        minVersion: 1,
+        maxVersion: 40,
+        // error correction level: 'L', 'M', 'Q' or 'H'
+        ecLevel: 'L',
+        // offset in pixel if drawn onto existing canvas
+        left: 0,
+        top: 0,
+        // size in pixel
+        size: 100,
+        // code color or image element
+        fill: '#000',
+        // background color or image element, null for transparent background
+        background: null,
+        // content
+        text: 'http://www.cargocn.com',
+        // corner radius relative to module width: 0.0 .. 0.5
+        radius: 0,
+        // quiet zone in modules
+        quiet: 0,
+        // modes
+        // 0: normal
+        // 1: label strip
+        // 2: label box
+        // 3: image strip
+        // 4: image box
+        mode: 0,
+        mSize: 0.1,
+        mPosX: 0.5,
+        mPosY: 0.5,
+        label: 'no label',
+        fontname: 'sans',
+        fontcolor: '#000',
+        image: null
+    }
+    $('#qrcode').qrcode(qrcode_setting);
+
+}
+
 var translateToSelect2 = function(flag){
    var iobject = window.cargocnData.zone;
    var arrs = [];
    if(flag==0){
-     arrs.push({"id":0, "text":"请选择发货地址"});
+     arrs.push({"id":"请选择发货地址", "text":"请选择发货地址"});
    }else{
-     arrs.push({"id":0, "text":"请选择到达地址"});
+     arrs.push({"id":"请选择到达地址", "text":"请选择到达地址"});
    }
    
    for(var i=0;i<iobject.length;i++){
@@ -519,8 +575,9 @@ $.fn.select2.defaults.set( "theme", "bootstrap" );
 $(document).ready(function() {//#enquiry_form 
     $("#send_enquiry").on('click',function(){
         //debugger;
+        //$(this).disabled();
         console.log($("#enquiry_form").serialize());
-        /*$.ajax({
+        $.ajax({
             url: BASE_API_URL + "TmpEnqiryMain/addTmpEnqiry.do",
             type: "GET",
             //dataType: "json",
@@ -531,11 +588,13 @@ $(document).ready(function() {//#enquiry_form
                console.log(result);
                if(result.code==100){
                   //console.log("用户手机号：" + result.data.userTel);
-                  if(result.data.locked = false){ //正常的
+                  showOrder(result.data);
+                  renderOrder(1);
+                  // if(result.data.locked = false){ //正常的
                       
-                  }else{ //true 未验证通过
+                  // }else{ //true 未验证通过
                       
-                  }
+                  // }
                }else{
 
                }
@@ -543,10 +602,7 @@ $(document).ready(function() {//#enquiry_form
             error:function(result){
                console.log(result);
             }
-        });*/
-        $('#shareOrder').modal('show');
-
-
+        });
     })
 
     $(".car_type_box span.item").on('click',function(){
@@ -607,17 +663,15 @@ $(document).ready(function() {//#enquiry_form
         data:translateToSelect2(1)
     });
 
-    // var send_index = Cookies.get("send_index");
-    // var arrive_index = Cookies.get("arrive_index");
+    var send_index = myCookie.get("send_index");
+    var arrive_index = myCookie.get("arrive_index");
     
-    // if(send_index){
-    //     $("#send_index").val(send_index).trigger();
-    // }
-    //  if(arrive_index){
-    //     $("#arrive_index").val(arrive_index).trigger();
-    // }
-    
-
+    if(send_index){
+        $("#send_index").val(send_index).trigger("change");
+    }
+     if(arrive_index){
+        $("#arrive_index").val(arrive_index).trigger("change");
+    }
     $('.form_date').datetimepicker({
        language: "zh-CN",
         weekStart: 1,
@@ -649,38 +703,24 @@ $(document).ready(function() {//#enquiry_form
     $('#send_close').on('click',function(){
        $('#myModal').modal('hide');
     });
+
+   
 })
 
-$(function(){
-    /*$('.sns-share').share();*/
-    var $config = {
-    url                 : 'http://172.16.10.55:3000/pages/weixinShare/shipshare.html',//'http://b966d904.ngrok.io/pages/weixinShare/shipshare.html',//'http://www.cargocn.com/cargocn-cloud-server/login', // 网址，默认使用 window.location.href
-    source              : 'http://172.16.10.55:3000',//'http://www.cargocn.com', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
-    title               : '货运中国网', // 标题，默认读取 document.title 或者 <meta name="title" content="share.js" />
-    description         : '货运中国网', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
-    image               : 'http://www.cargocn.com/images/logo.png', // 图片, 默认取网页中第一个img标签
-    sites               : ['wechat'], // 启用的站点
-    disabled            : ['google', 'facebook', 'twitter', 'qq', 'weibo','wechat', 'douban','linkedin','tencent','diandian'], //,'qzone' 禁用的站点
-    wechatQrcodeTitle   : "微信扫一扫：分享", // 微信二维码提示文字
-    wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
-  };
+/*$('.sns-share').share();*/
+/*var $config = {
+url                 : 'http://172.16.10.55:3000/pages/weixinShare/shipshare.html',//'http://b966d904.ngrok.io/pages/weixinShare/shipshare.html',//'http://www.cargocn.com/cargocn-cloud-server/login', // 网址，默认使用 window.location.href
+source              : 'http://172.16.10.55:3000',//'http://www.cargocn.com', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
+title               : '货运中国网', // 标题，默认读取 document.title 或者 <meta name="title" content="share.js" />
+description         : '货运中国网', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
+image               : 'http://www.cargocn.com/images/logo.png', // 图片, 默认取网页中第一个img标签
+sites               : ['wechat'], // 启用的站点
+disabled            : ['google', 'facebook', 'twitter', 'qq', 'weibo','wechat', 'douban','linkedin','tencent','diandian'], //,'qzone' 禁用的站点
+wechatQrcodeTitle   : "微信扫一扫：分享", // 微信二维码提示文字
+wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+};
 
-  $('.socialShare').share($config);
-  $('#qrcode').qrcode({
-    render:"canvas",
-    width:50,
-    height:50,
-    text: "http://www.cargocn.com"
-  });
-});
-
-//分享
-$(".wxshare").on("click",function() {
-  //$(".shareHide").toggle();
-  $(".wemcn").toggle();
- });
+$('.socialShare').share($config);*/
 </script>
-
-
 </body>
 </html>
