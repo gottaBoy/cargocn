@@ -497,12 +497,13 @@
 <script src="../vendor/social-share.js/src/js/jquery.qrcode.min.js"></script>
 <script src="../vendor/social-share.js/dist/js/share.min.js"></script>
 <script src="js/tm-scripts.js"></script>
+<script src="build/js/enquiry.js"></script>
 <script>
 var showOrder = function(order){
    $("#orderNumber").html("发货单号：" + order.enquiryBillId); 
    $("#order_routine").html(order.startAddress + "——" + order.arriveAddress);
-   $("#order_time").html("计划到达时间：" + order.planArriveTime);
-   $("#order_object").html( order.bidName + ":" + order.bidWeight);//bidNum,bidVolume,quoteEndTime
+   $("#order_time").html("计划发运时间：" + order.planStartTime);//计划到达时间quoteEndTime
+   $("#order_object").html( order.bidName + ":" + order.bidWeight);//bidNum,bidVolume,planArriveTime
 }
 
 var renderOrder = function(id){
@@ -596,11 +597,11 @@ $(document).ready(function() {//#enquiry_form
                       
                   // }
                }else{
-
+                  console.log(result);
                }
             },
             error:function(result){
-               console.log(result);
+               console.log('ajax请求出错！');
             }
         });
     })
