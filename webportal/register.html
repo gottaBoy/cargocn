@@ -12,17 +12,17 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" style="padding-right: 0px;">联系人 <span class="required" aria-required="true">
-                * </span>
-                </label>
-                <div class="col-md-8">
-                    <div class="input-icon right">
-                        <i class="fa"></i>
-                        <input type="text" class="form-control" name="contact" id="contact" placeholder="姓名为2~20个字符">
-                    </div>
-                </div>
-            </div>
+           <!--  <div class="form-group">
+               <label class="control-label col-md-3" style="padding-right: 0px;">联系人 <span class="required" aria-required="true">
+               * </span>
+               </label>
+               <div class="col-md-8">
+                   <div class="input-icon right">
+                       <i class="fa"></i>
+                       <input type="text" class="form-control" name="contact" id="contact" placeholder="姓名为2~20个字符">
+                   </div>
+               </div>
+           </div> -->
             <!-- <div class="form-group">
                 <label class="control-label col-md-3" style="padding-right: 0px;">用户类型 <span class="required">
                 * </span>
@@ -37,32 +37,47 @@
                     </div>
                 </div>
             </div> -->
-			<div class="form-group">
-                <label class="control-label col-md-3" style="padding-right: 0px;">图形验证码 <span class="required" aria-required="true">
+			<!-- <div class="form-group">
+                            <label class="control-label col-md-3" style="padding-right: 0px;">图形验证码 <span class="required" aria-required="true">
+                            * </span>
+                            </label>
+                            <div class="col-md-4">
+                                <div class="input-icon right">
+                                    <i class="fa"></i>
+                                    <input type="text" class="form-control" name="imgcodeinput" id="imgcodeinput" placeholder="图形验证码">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="http://pc.fuyoukache.com/common/imageCode?img=0.15737811229442844" alt="点击获取" id="imgcode">
+                            </div>
+                        </div> -->
+           <!--  <div class="form-group">
+               <label class="control-label col-md-3" style="padding-right: 0px;">手机验证码 <span class="required" aria-required="true">
+               * </span>
+               </label>
+               <div class="col-md-4">
+                   <div class="input-icon right">
+                       <i class="fa"></i>
+                       <input type="text" class="form-control" name="checkcode" id="checkcode" placeholder="手机验证码" disabled="">
+                   </div>
+               </div>
+               <div class="col-md-4" style="padding-right: 0px;">
+                   <input type="button" class="btn btn-primary btn-block" name="activecode" id="message_code" value="获取短信验证码" disabled="">
+               </div>
+           </div> -->
+           <div class="form-group">
+                <label class="control-label col-md-3">验证码 <span class="required" aria-required="true">
                 * </span>
                 </label>
-                <div class="col-md-4">
-                    <div class="input-icon right">
+                <div class="col-md-8">
+                    <div class="input-icon input-group right">
                         <i class="fa"></i>
-                        <input type="text" class="form-control" name="imgcodeinput" id="imgcodeinput" placeholder="图形验证码">
+                        <input type="text" class="form-control" name="verifyCode" id="verifyCode" placeholder="请输入验证码">
+                        <span class="input-group-btn">
+                           <button class="btn btn-default get-code" type="button" id="getCode">获取验证码</button>
+                           <button class="btn btn-default reset-code" type="button" id="resetCode" style="display:none;"><span id="code_second">60</span>秒后重发</button>
+                        </span> 
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <img src="http://pc.fuyoukache.com/common/imageCode?img=0.15737811229442844" alt="点击获取" id="imgcode">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" style="padding-right: 0px;">手机验证码 <span class="required" aria-required="true">
-                * </span>
-                </label>
-                <div class="col-md-4">
-                    <div class="input-icon right">
-                        <i class="fa"></i>
-                        <input type="text" class="form-control" name="checkcode" id="checkcode" placeholder="手机验证码" disabled="">
-                    </div>
-                </div>
-                <div class="col-md-4" style="padding-right: 0px;">
-                    <input type="button" class="btn btn-primary btn-block" name="activecode" id="message_code" value="获取短信验证码" disabled="">
                 </div>
             </div>
 			<div class="form-group" style="margin-bottom: 2px;">
@@ -83,7 +98,7 @@
         <div class="form-group" style="margin-top: 32px;">
             <div class="form-actions fluid">
                 <div class="col-md-offset-2 col-md-8">
-                    <button type="submit" class="btn btn-primary btn-block btn-lg">申请加入</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">提交</button>
                 </div>
             </div>
         </div>

@@ -175,6 +175,7 @@ $.fn.select2.defaults.set( "theme", "bootstrap" );
   }
   $('.form_date').datetimepicker({
     language: "zh-CN",
+    startDate: moment().format('YYYY-MM-DD'),
     weekStart: 1,
     todayBtn:  1,
     autoclose: 1,
