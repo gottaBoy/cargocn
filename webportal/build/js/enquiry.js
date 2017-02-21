@@ -1,3 +1,5 @@
+$(function(){
+
 var showOrder = function(order){
    $("#orderNumber").html("发货单号：" + order.enquiryBillId); 
    $("#order_routine").html(order.startAddress + "——" + order.arriveAddress);
@@ -72,7 +74,7 @@ var translateToSelect2 = function(flag){
 var BASE_API_URL = "/cargocn-cloud-EnqiryQuotation/";
 var login_flg = false;
 $.fn.select2.defaults.set( "theme", "bootstrap" );
-$(document).ready(function() {//#enquiry_form 
+//$(document).ready(function() {//#enquiry_form 
   $("#send_enquiry").on('click',function(){
     //debugger;
     //$(this).disabled();
