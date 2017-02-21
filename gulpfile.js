@@ -294,8 +294,8 @@ gulp.task('watchcopy', function () {
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: './',
-            index:"/webportal/index.html"
+            baseDir: './webportal',
+            index:"/index.html"
         }
     })
 })
