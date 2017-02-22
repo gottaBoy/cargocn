@@ -22439,8 +22439,8 @@ BD = {
             $("#identity").find('div.text').animateOnScroll({
                 scrollDownEffect: 'fadeInRight'
             });
-            $("#personal").find('div.text').animateOnScroll({
-                scrollDownEffect: 'fadeInLeftBig'
+            $("#personal").find('div.barnav-page').animateOnScroll({
+                scrollDownEffect: 'zoomInDown'
             });
             $("#style").find('div.text').animateOnScroll({
                 scrollDownEffect: 'fadeInRight'
