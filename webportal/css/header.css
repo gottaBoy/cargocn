@@ -753,68 +753,75 @@ header .well-sm {
 .img-er{margin-right:10px}
 .border-success {border:2px solid #13CC1D;background-color:#fff}
 .border-default {border:2px solid #148cdc;background-color:#fff}
-.btn-social {
-    position: relative;
-    padding-left: 66px;
-    text-align: left;
+
+.modal-page{
+  background: #159ae6;
+  height: 100px;
 }
-.btn-social>:first-child {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 50px;
-    line-height: 44px;
-    font-size: 1.6em;
-    text-align: center;
-    background-color:#13CC1D;
+.modal-page1{
+  background: #159ae6;
+  height: 150px;  
 }
-
-.social-icon{margin-top:50px;display: inline-block}
-
-
-.wemcn {
-    display: none;
-    font-size: 12px;
-    top:38px;
-    position: absolute;
-    left: 300px;
-    bottom: 37px;
-    z-index: 10
-
+.modal-page span{
+  color: #fff;
 }
-.wemcn .ewmDiv {
-    width: 275px;
-    height: 120px;
-    padding: 10px;
-    background: #fff;
-    border: 2px solid #efefef;
-    border-radius: 5px
+.modal-page span .center{
+  padding: 20px 2px;
+  text-align: center
+}
+.pull-right .bottom{
+  margin-top: 35px;
+  color: #fff
+}
+.row-contain .ewmimg img{
+  margin:20px;
+  width: 150px;
+  height: 150px
+}
+.row-contain .ewmimg-text{
+  bottom: -140px;
+  font-size:14px
 }
 
-.wemcn .ewmDiv img {
-    width: 100px;
-    height: 100px;
-    float: left;
-    display: inline
+.row-contain h2{
+  color:#000;
+  font-weight: bold;
 }
-
-
-.wemcn .ewmDiv .rwmtext {
-    width: 145px;
-    color: #000;
+.border-circle{
+  font-size: 30px;
+  padding: 20px;
+  margin-left: 40px;
+  background: #fff;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%
+}
+.modal-page1 .rwm-img img{
+  padding: 30px 15px;
+  float: left;
+}
+.modal-page1 .rwmtext{
+    // width: 145px;
+    color: #fff;
     text-indent: 8px;
-    padding-top: 10px;
+    padding: 35px 10px;
     float: left;
     display: inline
 }
-.wemcn .ewmDiv .rwmtext p{float: left;padding-left:10px;font-size:14px}
-.fa-caret-down {
-    position: absolute;
-    margin-top: -11px;
-    text-align: center;
-    left: 10px;
-    color: #EEE7E7
+.modal-page1 .wechat-img{
+  float: left;
+  margin: 20px 10px;
 }
 
-#erweima{position: fixed;left: 300px;top: 79px;}
+.modal-page1 .wechat-img span{
+
+  margin: 3px 10px;
+  color:#fff
+}
+.fa-wechat{
+  font-size: 22px;
+  color: green;
+}
+.glyphicon-ok{
+  color: green;
+}
