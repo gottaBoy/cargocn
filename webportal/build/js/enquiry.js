@@ -1,4 +1,7 @@
 $(function(){
+var reloadPage = function (){
+    window.location.reload();
+}
 
 var showOrder = function(order){
    $("#orderNumber").html("发货单号：" + order.enquiryBillId); 
@@ -184,6 +187,12 @@ $.fn.select2.defaults.set( "theme", "bootstrap" );
     minView: 2,
     forceParse: 0
   });
+
+  $("#send_another").on('click',function(){
+      $('#shareOrder').modal('hide');
+      reloadPage();
+  });
+
   $('#start_send').on('click',function(){
     //debugger;
     if(login_flg==false){
