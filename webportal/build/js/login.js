@@ -1,5 +1,5 @@
 CHENGDA.www.login = function () {
-	myCookie.add("access_token","18226626908",{"expires":5});
+	//myCookie.add("access_token","18226626908",{"expires":5});
 	var voiceStatus = true;
 	var timer=null;
 	var imgKeyRandom = '';
@@ -299,7 +299,7 @@ CHENGDA.www.login = function () {
 			//cLoginTimes();
 			//getImgCode();
 			//sendImgCode();
-			handleValidation();
+			//handleValidation();
             loginSet(1);
 		}
 

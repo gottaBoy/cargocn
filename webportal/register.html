@@ -8,7 +8,7 @@
                 <div class="col-md-8">
                     <div class="input-icon right">
                         <i class="fa"></i>
-                        <input type="text" class="form-control" name="phone" id="phone" placeholder="请输入手机号">
+                        <input type="text" class="form-control" name="userTel" id="phone" placeholder="请输入手机号">
                     </div>
                 </div>
             </div>
@@ -70,14 +70,23 @@
                 * </span>
                 </label>
                 <div class="col-md-8">
-                    <div class="input-icon input-group right">
-                        <i class="fa"></i>
-                        <input type="text" class="form-control" name="verifyCode" id="verifyCode" placeholder="请输入验证码">
-                        <span class="input-group-btn">
-                           <button class="btn btn-default get-code" type="button" id="getCode">获取验证码</button>
-                           <button class="btn btn-default reset-code" type="button" id="resetCode" style="display:none;"><span id="code_second">60</span>秒后重发</button>
-                        </span> 
+                  <div class="col-md-4">
+                    <div class="input-icon right" style="margin-left: -25%;">
+                        <i class="fa" style="right: -60px;"></i>
+                        <input type="text" class="form-control" style="min-width: 150px;" name="verifyCode" id="verifyCode" placeholder="请输入验证码">
+                       <!--  <span class="input-group-btn">
+                          <button class="btn btn-default get-code" type="button" id="getCode">获取验证码</button>
+                          <button class="btn btn-default reset-code" type="button" id="resetCode" style="display:none;"><span id="code_second">60</span>秒后重发</button>
+                       </span>  -->
                     </div>
+                  </div>
+                  <div class="col-md-4" style="margin-left: 25%;">
+                    <!-- <span class="input-group-btn"> -->
+                        <button class="btn btn-default get-code" type="button" id="getCode">获取验证码</button>
+                        <button class="btn btn-default reset-code" type="button" id="resetCode" style="display:none;"><span id="code_second">60</span>秒后重发</button>
+                     <!-- </span> -->
+                  </div>
+
                 </div>
             </div>
 			<div class="form-group" style="margin-bottom: 2px;">
@@ -85,12 +94,20 @@
 				<div class="col-md-8">
 					<div class="input-icon right">
 						<i class="fa"></i>
-						<input type="password" class="form-control" name="khpassword" id="khpassword" placeholder="请设置密码（6~20个字符组合）"></div>
+						<input type="password" class="form-control" name="password" id="password" placeholder="请输入密码（6~20个字符组合）"></div>
 				</div>
 			</div>
-            <div class="form-group" id="voice_box" style="display:none;font-size:12px; margin-bottom:0px;">
-                <span class="col-md-offset-3 col-md-8">短信验证码收不到？<a href="" id="voice_code">试试语音验证码</a></span>
+            <div class="form-group" style="margin-bottom: 2px;">
+                <label class="control-label col-md-3">密码确认<span class="required" aria-required="true">* </span></label>
+                <div class="col-md-8">
+                    <div class="input-icon right">
+                        <i class="fa"></i>
+                        <input type="password" class="form-control" name="rpassword" id="rpassword" placeholder="请重新输入密码"></div>
+                </div>
             </div>
+           <!--  <div class="form-group" id="voice_box" style="display:none;font-size:12px; margin-bottom:0px;">
+               <span class="col-md-offset-3 col-md-8">短信验证码收不到？<a href="" id="voice_code">试试语音验证码</a></span>
+           </div> -->
 			<div class="form-group text-danger" id="alert_box" style="display:none;font-size:12px;text-align:center;margin-bottom:0px;">
                 <span class="col-md-12"></span>
             </div>
@@ -99,9 +116,10 @@
             <div class="form-actions fluid">
                 <div class="col-md-offset-2 col-md-8">
                     <button type="submit" class="btn btn-primary btn-block btn-lg">提交</button>
+                    <!-- <button type="button" class="btn btn-primary btn-block btn-lg" id="submit_user">提交</button> -->
                 </div>
             </div>
         </div>
     </form>
 </div>
-<script src="js/register.js"></script>
+<script src="build/js/register.js"></script>

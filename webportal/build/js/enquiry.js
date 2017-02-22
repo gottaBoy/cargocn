@@ -16,6 +16,8 @@ var renderOrder = function(id){
     $(".wxshare").on("click",function() {
       $(".wemcn").toggle();
     });
+    var global_url = "http://dev2.cargocn.cn";
+    var qrcode_text = global_url + "/cargocn-cloud-EnqiryQuotation/TmpInquiryShare/loadTmpEnqiryByid.do?tmpEnqiryId=" + id;
      
     var qrcode_setting = {
         // render method: 'canvas', 'image' or 'div'
@@ -35,7 +37,7 @@ var renderOrder = function(id){
         // background color or image element, null for transparent background
         background: null,
         // content
-        text: 'http://www.cargocn.com',
+        text: qrcode_text,//'http://www.cargocn.com',
         // corner radius relative to module width: 0.0 .. 0.5
         radius: 0,
         // quiet zone in modules
@@ -94,7 +96,7 @@ $.fn.select2.defaults.set( "theme", "bootstrap" );
            if(result.code==100){
               //console.log("用户手机号：" + result.data.userTel);
               showOrder(result.data);
-              renderOrder(1);
+              renderOrder(result.data.id);
               // if(result.data.locked = false){ //正常的
                   
               // }else{ //true 未验证通过
