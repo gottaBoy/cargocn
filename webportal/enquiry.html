@@ -337,7 +337,7 @@
                 </div>
             </div>
             <!-- 登录 -->
-            <div class="modal fade" id="shareOrder" data-backdrop="static" data-keyboard=false tabindex="-1" role="dialog" aria-hidden="true">
+            <!-- <div class="modal fade" id="shareOrder1" data-backdrop="static" data-keyboard=false tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog modal-md">
                 <div class="modal-content" style="margin-top:250px;">
                   <div class="modal-header">
@@ -362,8 +362,8 @@
                             </div>
                             <div class="wemcn">
                               <div id="ewm" class="ewmDiv clearfix">
-                                 <!--  <img id="ewmimg" class="ewmimg" src="http://cargocn.com/images/shipper_big.png"> -->
-                                  <div id="qrcode" style="float: left;"></div>
+                                 
+                                  <div id="qrcode1" style="float: left;"></div>
                                   <div class="rwmtext"> 
                                       <p>扫一扫</p >
                                       <p>把询价详情</p >
@@ -372,7 +372,6 @@
                               </div>
                               <i class="fa fa-caret-down fa-2x"></i>
                             </div>  
-                            <!-- <div class="col-md-12 shareHide" id="erweima"><img src="images/er_03.jpg"></div>   --> 
                             <div class="col-md-12 social-icon">                             
                                 <img src="images/cargo.png" alt="">                        
                                 <img src="images/cargocn_driver.png" alt="" width="60" height="60" class="img-er">
@@ -380,11 +379,9 @@
                             </div>
                         </div>
                     </div>
-
+            
                     <div class="row" style="display:none">
-                        <!-- <div class="col-md-12" style="margin-top:22px;">
-                            <button type="button" class="btn btn-primary">分享</button>
-                        </div> -->
+                       
                         <div class="col-sm-6">
                              <p>分享给微信好友，让更多的人看到您的询价</p>
                              <div class="socialShare" style="margin-left: 100px;" >
@@ -406,9 +403,9 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- 登录 -->
-            <div class="modal fade" id="myModal" data-backdrop="static" data-keyboard=false tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="shareOrder" data-backdrop="static" data-keyboard=false tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog modal-md">
                 <div class="modal-content" style="margin-top:250px;">
                   <div class="modal-header modal-page">
@@ -417,9 +414,8 @@
                        <div class="col-md-6">
                            <div class="border-circle col-md-3"><i class="glyphicon glyphicon-ok"></i></div>
                             <span><h4 class="center">询价单提交成功</h4></span>
-                       
                        </div>
-                       <div class="col-md-6 pull-right"><h4 class="bottom">发货单号：201704546890</h4></div>
+                       <div class="col-md-6 pull-right"><h4 class="bottom" id="orderNumber">询价单号：201704546890</h4></div>
                    </div>
                       
                   </div>
@@ -428,13 +424,14 @@
                         <div class="row"> 
                         <div class="row-contain">                        
                             <div class="col-md-12">
-                                <h2>上海 → 南京</h2>
-                                <h4><i class="fa fa-cube gray"></i>钢铁：5000吨</h4>
-                                <h4><i class="glyphicon glyphicon-time gray"></i>计划到达时间：2017-03-05</h4>
+                                <h2 id="order_routine">上海 → 南京</h2>
+                                <h4><i class="fa fa-cube gray"></i><span id="order_object">钢铁：5000吨<span></h4>
+                                <h4><i class="glyphicon glyphicon-time gray"></i><span id="order_time">计划发运时间：2017-03-05</span></h4>
                             </div> 
                             <div class="col-md-12">
                                 <div class="ewmimg col-md-5">
-                                    <img src="http://cargocn.com/images/shipper_big.png" alt="">
+                                    <div id="qrcode" ></div>
+                                    <!-- <img src="http://cargocn.com/images/shipper_big.png" alt=""> -->
                                 </div>
                                 <div class="ewmimg-text col-md-6">
                                     <i class="fa fa-wechat"></i> 扫码至微信分享给更多运力

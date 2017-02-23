@@ -4,19 +4,19 @@ var reloadPage = function (){
 }
 
 var showOrder = function(order){
-   $("#orderNumber").html("发货单号：" + order.enquiryBillId); 
-   $("#order_routine").html(order.startAddress + "——" + order.arriveAddress);
+   $("#orderNumber").html("询价单号：" + order.enquiryBillId); 
+   $("#order_routine").html(order.startAddress + " → " + order.arriveAddress);
    $("#order_time").html("计划发运时间：" + order.planStartTime);//计划到达时间quoteEndTime
    $("#order_object").html( order.bidName + ":" + order.bidWeight);//bidNum,bidVolume,planArriveTime
 }
 
 var renderOrder = function(id){
-    $('#shareOrder').modal('show');
-     //分享
-    $(".wxshare").on("click",function() {
-      $(".wemcn").toggle();
-    });
-    var global_url = "http://dev2.cargocn.cn";
+     $('#shareOrder').modal('show');
+    //  //分享
+    // $(".wxshare").on("click",function() {
+    //   $(".wemcn").toggle();
+    // });
+    //console.log(id);
     var qrcode_text = global_url + "/cargocn-cloud-EnqiryQuotation/TmpInquiryShare/loadTmpEnqiryByid.do?tmpEnqiryId=" + id;
      
     var qrcode_setting = {
@@ -31,7 +31,7 @@ var renderOrder = function(id){
         left: 0,
         top: 0,
         // size in pixel
-        size: 100,
+        size: 150,
         // code color or image element
         fill: '#000',
         // background color or image element, null for transparent background
@@ -55,7 +55,7 @@ var renderOrder = function(id){
         label: 'no label',
         fontname: 'sans',
         fontcolor: '#000',
-        image: null
+        image: null //"http://172.16.10.55:3000/images/share_cargocn_driver.png"
     }
     $('#qrcode').qrcode(qrcode_setting);
 
@@ -76,23 +76,21 @@ var translateToSelect2 = function(flag){
    }
    return arrs;
 } 
-var BASE_API_URL = "/cargocn-cloud-EnqiryQuotation/";
 var login_flg = false;
 $.fn.select2.defaults.set( "theme", "bootstrap" );
-//$(document).ready(function() {//#enquiry_form 
   $("#send_enquiry").on('click',function(){
-    //debugger;
-    //$(this).disabled();
-    console.log($("#enquiry_form").serialize());
+    //$('#shareOrder').modal('show');
+    //renderOrder(812);
+    //console.log($("#enquiry_form").serialize());
     $.ajax({
-        url: BASE_API_URL + "TmpEnqiryMain/addTmpEnqiry.do",
+        url: "/cargocn-cloud-EnqiryQuotation/TmpEnqiryMain/addTmpEnqiry.do",
         type: "GET",
         //dataType: "json",
         contentType: "application/json; charset=utf-8",
         //contentType:"application/x-www-form-urlencoded",
         data: $("#enquiry_form").serialize(),
         success: function(result) {
-           console.log("result"+result);
+           //console.log("result"+result);
            if(result.code==100){
               //console.log("用户手机号：" + result.data.userTel);
               showOrder(result.data);

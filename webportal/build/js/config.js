@@ -1,0 +1,1 @@
+var global_url = "http://dev2.cargocn.cn"; 
