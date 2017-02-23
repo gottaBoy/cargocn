@@ -282,6 +282,7 @@
 }
 .side-4 .well-page ul li {
   float: left;
+  line-height: 25px;
   font-size: 14px;
   text-align: left;
   display: block;
