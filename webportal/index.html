@@ -23,12 +23,12 @@
 <script type='text/javascript' src='vendor/jquery-migrate/jquery-migrate.min.js'></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/select2/dist/js/select2.full.min.js"></script>
+<script src="vendor/select2/dist/js/i18n/zh-CN.js"></script>
 <script src="build/js/config.js"></script>
 <script src="build/js/heads.js"></script>
 <script src="build/js/myCookie.js"></script>
 <!-- <script src="build/js/maxZindex.js"></script> -->
-<script src="vendor/select2/dist/js/select2.full.min.js"></script>
-<script src="vendor/select2/dist/js/i18n/zh-CN.js"></script>
 <script src="build/js/jquery.liMarquee.js"></script>
 <style type="text/css">
 .side.side-2 .item-text.select2Span span{
@@ -179,21 +179,11 @@
                            </div>
                     </div> 
                     <div class="col-md-6">
-                      
-                          <div class="now_data">
-
-                              <ul>
-                              <li><a href="#"><span class="time">19:28</span><span class="user">广州市 → 珠海市</span><span class="wu"><i>38.865</i>吨货物</span><span class="state1">正在询价</span></a></li>
-                              <li><a href="#"><span class="time">19:25</span><span class="user">广州市 → 珠海市</span><span class="wu"><i>29.27</i>吨货物</span><span class="state1">正在询价</span></a></li>
-                              <li><a href="#"><span class="time">19:28</span><span class="user">马鞍山市 → 上海市</span><span class="wu"><i>38.865</i>吨货物</span><span class="state1">正在询价</span></a></li>
-                              <li><a href="#"><span class="time">19:25</span><span class="user">马鞍山市 → 上海市</span><span class="wu"><i>29.27</i>吨货物</span><span class="state2">已经成交</span></a></li>
-                               <li><a href="#"><span class="time">19:28</span><span class="user">南京市 → 镇江市</span><span class="wu"><i>38.865</i>吨货物</span><span class="state2">已经成交</span></a></li>
-                              <li><a href="#"><span class="time">19:25</span><span class="user">上海市 → 无锡市</span><span class="wu"><i>29.27</i>吨货物</span><span class="state3">正在报价</span></a></li>
-                               <li><a href="#"><span class="time">19:28</span><span class="user">常州市 → 温州市</span><span class="wu"><i>38.865</i>吨货物</span><span class="state3">正在报价</span></a></li>
-                              <li><a href="#"><span class="time">19:25</span><span class="user">南京市 → 镇江市</span><span class="wu"><i>29.27</i>吨货物</span><span class="state1">正在询价</span></a></li>
-                              </ul>
-                          </div>
-                          
+                        <div class="now_data">
+                            <ul id="myliMarquee">
+                              
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-ms-12 col-md-6" style="float:right"> 
                         <div class="pull-left">  
@@ -467,7 +457,6 @@
                        <div class="col-md-4 col-lg-4"> <h5 data-fontsize="13" data-lineheight="14"><strong><span>商务合作</span></strong></h5>
                         <h5 data-fontsize="13" data-lineheight="14"><span><a title="下载中心" href="" target="_blank">服务热线：400-856-5886</a></span></h5>
                         <h5 data-fontsize="13" data-lineheight="14"><span><a title="文档中心" href="" target="_blank">企业邮箱：Service@Cargocn.com</a></span></h5>
-                        <h5 data-fontsize="13" data-lineheight="14"><div class="fusion-img"><img src="http://www.cargocn.com/images/wx-cargocn.jpg" alt="" width="70" height="70"></div><span style="float:left"><h5>微信公众号</h5>cargocncom</span></h5>
                        </div>
              </div>
 
@@ -587,8 +576,6 @@ var translateToSelect2 = function(flag){
    }
    return arrs;
 }
-
-$.fn.select2.defaults.set( "theme", "bootstrap" );
     /*$(function () { $("[data-toggle='tooltip']").tooltip(); });*/
 $(document).ready(function() {
     //findMaxZIndex('body');
@@ -608,51 +595,6 @@ $(document).ready(function() {
     });
 
     initialCookie();
-    // $('#headerAccount a').on('click', function(event) {
-    //     debugger;
-    //     event.preventDefault();
-    //     //登录pop窗口
-    //     $('#pop_login_out').modal('toggle');
-    //     $('#login_out_box a').eq(0).trigger('click');
-    // });
-    //  $("#login_out_box").off("click").on("click", "a", function(event) {
-    //     event.preventDefault();
-    //     //debugger;
-    //     var _this = $(this);
-    //     var login_url = $(this).attr("href");
-    //     console.log(login_url);
-    //     $.ajax({
-    //         url:login_url,
-    //         type: "GET",
-    //         dataType: "html"
-    //     }).done(function(e) {
-    //         $("#popular10").html(e);
-    //         _this.parent("li").addClass("active").siblings().removeClass("active")
-    //     })
-    // })
-    /*$("#headerAccount a").on("click", function(a) {
-        debugger;
-        //a.preventDefault(),
-        //"user.html" == $(this).attr("href") || "user.html?target=user_data.html" == $(this).attr("href") ? window.location.href = $(this).attr("href") : ($("#pop_login_out").modal("toggle"),
-        $("#pop_login_out").modal("toggle");
-        $("#login_out_box a").eq(0).trigger("click");
-    })
-    $("#login_out_box").off("click").on("click", "a", function(a) {
-        //a.preventDefault();
-        debugger;
-        var _this = $(this);
-        var login_url = $(this).attr("href");
-        console.log(login_url);
-        $.ajax({
-            url:login_url,
-            type: "GET",
-            dataType: "html"
-        }).done(function(e) {
-            $("#popular10").html(e);
-            _this.parent("li").addClass("active").siblings().removeClass("active")
-        })
-    })*/
-
     $("#start_send").on("click",function(){
         var send_index = $("#send_index").val();
         var arrive_index = $("#arrive_index").val();
@@ -670,13 +612,56 @@ $(document).ready(function() {
            window.location.href = "enquiry.html";
         }
     })
+
     //分享
     $(".wxshare").on("click",function() {
-             
-             $(this).parent().next().toggle(); 
+         $(this).parent().next().toggle(); 
      });
+    
+    loadliMarquee();
+   
 })
+var renderResult = function(data){
+  var content = '';
+  for(var i=0;i<data.length;i++){  //planStartTime:"2016-12-03 16:08:15"
+      content += '<li><a href="javascript:void(0);">';
+      content += '<span class="time">' + data[i].planStartTime + '</span>';
+      content += '<span class="user">' + data[i].startAddress + ' → ' + data[i].arriveAddress + '</span>';
+      content += '<span class="wu"><i>' + data[i].bidWeight + '</i>吨</span>';
+      content += '<span class="state1">'+ data[i].enquiryStatus + '</span>';
+      content += '</a></li>';
+  }
+  $("#myliMarquee").html(content);
+}
+var loadliMarquee = function(){
+    $.ajax({
+        url: '/cargocn-cloud-EnqiryQuotation/TmpInquiryShare/loadAllEnqiry.do',//BASE_API_URL
+        type: 'POST',
+        async: true,
+        dataType: 'JSON',
+        //data: param,//$("#logins_form").serialize()
+        success: function(result) {
+            if(result.code=="100"){
+                renderResult(result.data);
+            }else{
+                console.log("加载数据失败");
+            }
+            console.log(result);
+        }
+    });
+   // var content = '';
+   // content += '<li><a href="#"><span class="time">19:28</span><span class="user">广州市 → 珠海市</span><span class="wu"><i>38.865</i>吨货物</span><span class="state1">正在询价</span></a></li>';
+   /*<li><a href="#"><span class="time">19:25</span><span class="user">广州市 → 珠海市</span><span class="wu"><i>29.27</i>吨货物</span><span class="state1">正在询价</span></a></li>
+  <li><a href="#"><span class="time">19:28</span><span class="user">马鞍山市 → 上海市</span><span class="wu"><i>38.865</i>吨货物</span><span class="state1">正在询价</span></a></li>
+  <li><a href="#"><span class="time">19:25</span><span class="user">马鞍山市 → 上海市</span><span class="wu"><i>29.27</i>吨货物</span><span class="state2">已经成交</span></a></li>
+   <li><a href="#"><span class="time">19:28</span><span class="user">南京市 → 镇江市</span><span class="wu"><i>38.865</i>吨货物</span><span class="state2">已经成交</span></a></li>
+  <li><a href="#"><span class="time">19:25</span><span class="user">上海市 → 无锡市</span><span class="wu"><i>29.27</i>吨货物</span><span class="state3">正在报价</span></a></li>
+   <li><a href="#"><span class="time">19:28</span><span class="user">常州市 → 温州市</span><span class="wu"><i>38.865</i>吨货物</span><span class="state3">正在报价</span></a></li>
+  <li><a href="#"><span class="time">19:25</span><span class="user">南京市 → 镇江市</span><span class="wu"><i>29.27</i>吨货物</span><span class="state1">正在询价</span></a></li>*/
 
+   
+   
+};
 $(function(){
     $('.now_data').liMarquee({
         direction: 'up'

@@ -158,14 +158,14 @@
   float: left;
 }
 .now_data .time {
-  width: 70px;
+  width: 120px;
   color: #999;
 }
 .now_data .user {
   width: 120px;
 }
 .now_data .wu {
-  width: 200px;
+  width: 150px;
 }
 .now_data .wu i {
   color: #e13041;

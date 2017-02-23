@@ -90,8 +90,6 @@ var login_flg = false;
 
 $("#send_enquiry").on('click',function(){
      
-  if(myCookie.get("access_token")){
-
     //$('#shareOrder').modal('show');
     //renderOrder(812);
     var send_index = $("#send_index").val();
@@ -140,7 +138,8 @@ $("#send_enquiry").on('click',function(){
       $('#smModal').modal('show');
       return;
     }
-    return;
+  if(myCookie.get("access_token")){
+    //return;
     $.ajax({
         url: "/cargocn-cloud-EnqiryQuotation/TmpEnqiryMain/addTmpEnqiry.do",
         type: "GET",

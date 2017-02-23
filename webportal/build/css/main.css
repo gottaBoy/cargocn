@@ -158,28 +158,28 @@
   float: left;
 }
 .now_data .time {
-  width: 70px;
+  width: 150px;
   color: #999;
 }
 .now_data .user {
   width: 200px;
 }
 .now_data .wu {
-  width: 160px;
+  width: 110px;
 }
 .now_data .wu i {
   color: #e13041;
 }
 .now_data .state1 {
-  width: 90px;
+  width: 70px;
   color: #34b796 !important;
 }
 .now_data .state2 {
-  width: 90px;
+  width: 70px;
   color: #D49608 !important;
 }
 .now_data .state3 {
-  width: 90px;
+  width: 70px;
   color: #159ae6 !important;
 }
 .border-blue {
