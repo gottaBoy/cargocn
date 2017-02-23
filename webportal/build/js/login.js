@@ -20,17 +20,17 @@ CHENGDA.www.login = function () {
 			focusInvalid: false, // do not focus the last invalid input
 			ignore: "",  // validate all fields including form hidden input
 			rules: {
-				userPhone: {
-					required: true,
-					phoneZH: true
+				username: {
+					required: true//,
+					//phoneZH: true
 				},
 				password: {
-					passwordReg: true,
+					//passwordReg: true,
 					required: true
 				}
 			},
 			messages: {
-				phone: {
+				username: {
 					required: "请输入手机号"
 				},
 				password: {
@@ -65,7 +65,7 @@ CHENGDA.www.login = function () {
 
 			submitHandler: function (form) {
 				loginSet({
-					mobile: $('#phone').val(),
+					username: $('#phone').val(),
 					password: $('#password').val()
 				});
 			}
@@ -180,20 +180,36 @@ CHENGDA.www.login = function () {
 		// 	}
 		// }
 		//if(issubmits){
-			// $.ajax({
-			// 	url: BASE_API_URL+'/user/login',
-			// 	type: 'POST',
-			// 	async: true,
-			// 	dataType: 'JSON',
-			// 	data: param,
-			// 	success: function(back) {
+			$.ajax({
+				url: '/cargocn-cloud-server/appLogin.do',//BASE_API_URL
+				type: 'POST',
+				async: true,
+				dataType: 'JSON',
+				data: param,//$("#logins_form").serialize()
+				success: function(result) {
 					
 					//if (back.status === 'Y') {
 						//var checked = $('#remember_login').is(':checked') ? 30 : null;
 						//setCookie('access_token', Base64.encode(JSON.stringify(back)), checked);
-						
-						//$('#pop_login_out').modal('toggle');
+				    console.log(result);
+                    if(result.code=="100"){
+                    	myCookie.add("access_token",result.data.user.usertel,{"expires":5});
+                        console.log("access_token=" + myCookie.get("access_token"));
+						$('#pop_login_out').modal('toggle');
 						setUser(1);
+					}else{
+						console.log("用户名或密码错误");
+						$("#alert_box span").html(result.msg);
+						$("#alert_box").show();
+						if(timer==null){//5s后错误信息消失
+							timer=setTimeout(function(){
+								$("#alert_box span").html("");
+								$("#alert_box").hide();
+								clearTimeout(timer);
+								timer=null;
+							},10000);
+						}
+					}
 						// if (window.location.href.match('index') && window.location.href.match('index').length > 0) {
 						// 	$('#index_login_box').hide();
 						// 	quickSend();
@@ -243,8 +259,8 @@ CHENGDA.www.login = function () {
 						// 	},10000);
 						// }
 					//}
-				//}
-			//});
+				}
+			});
 		//}
 	};
 
@@ -299,8 +315,7 @@ CHENGDA.www.login = function () {
 			//cLoginTimes();
 			//getImgCode();
 			//sendImgCode();
-			//handleValidation();
-            loginSet(1);
+			handleValidation();
 		}
 
 	};
