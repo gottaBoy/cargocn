@@ -26,11 +26,15 @@
     <script src="../vendor/jquery-migrate/jquery-migrate.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../vendor/moment/min/moment.min.js"></script>
-    <script src="build/js/config.js"></script>
-    <script src="build/js/heads.js"></script>
-    <script src="build/js/myCookie.js"></script>
     <script src="../vendor/select2/dist/js/select2.full.min.js"></script>
     <script src="../vendor/select2/dist/js/i18n/zh-CN.js"></script>
+    <script src="build/js/myCookie.js"></script>
+    <script src="build/js/config.js"></script>
+    <script src="build/js/heads.js"></script>
+    <script type='text/javascript' src='build/js/production.js'></script>
+    <script src="build/js/index.js"></script>
+    
+    
     <script type='text/javascript' src='../vendor/js-cookie/src/js.cookie.js'></script>
     <script type='text/javascript' src='../build/js/cg.js'></script>
    
@@ -48,7 +52,32 @@
     <script src="js/html5shiv.js"></script>
     <![endif]-->
     <script src='js/device.min.js'></script>
-   
+<style type="text/css">
+.side.side-2 .item-text.select2Span span{
+   font-size: 14px;
+}
+.select2-container{
+   color:#000;
+}
+.modal{
+   color: #000;
+}
+.input-icon.right > i {
+    right: 16px;
+    float: right;
+}
+.input-icon > i {
+    color: red;
+    display: block;
+    position: absolute;
+    margin: 11px 2px 4px 10px;
+    z-index: 3;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    text-align: center;
+}
+</style>
 </head>
 <body>
 <div class="page">
@@ -492,6 +521,51 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="modal fade" id="smModal" style="top:70px;">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span></button>
+                      <h4 class="modal-title">提示</h4>
+                  </div>
+                  <div class="modal-body">
+                      <p>确认删除？</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">确认</button>
+                  </div>
+                </div>
+                <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+            </div>
+            <div class="modal fade" id="pop_login_out" style="top:70px;" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" aria-hidden="true">
+                <div class="modal-dialog" style="width:450px;">
+                    <div class="modal-content">
+                        <div class="modal-body" style="padding:0;">
+                            <div class="tabs" style="margin:0;">
+                                <ul class="nav nav-tabs nav-justified" id="login_out_box">
+                                    <li class="active">
+                                        <a href="login.html" class="text-center"> <!-- <i class="fa fa-sign-in"></i> -->
+                                            登录
+                                        </a>
+                                    </li>
+                                    <li>
+                                       <a href="register.html" class="text-center"> <!-- <i class="fa fa-user-plus"></i> -->
+                                           注册
+                                       </a>
+                                   </li> 
+                                </ul>
+                                <div class="tab-content" style="padding: 50px 15px 10px 15px;">
+                                    <div id="popular10"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

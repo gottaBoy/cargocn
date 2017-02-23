@@ -1,3 +1,13 @@
+CHENGDA.www.quoteCreate = function() {
+    this.isSubmits=true;
+    this.initChoose="";
+};
+//页面初始化时触发的操作
+CHENGDA.www.quoteCreate.prototype.formInit = function() {
+
+};
+
+
 $(function(){
 var reloadPage = function (){
     window.location.reload();
@@ -77,11 +87,60 @@ var translateToSelect2 = function(flag){
    return arrs;
 } 
 var login_flg = false;
-$.fn.select2.defaults.set( "theme", "bootstrap" );
-  $("#send_enquiry").on('click',function(){
+
+$("#send_enquiry").on('click',function(){
+     
+  if(myCookie.get("access_token")){
+
     //$('#shareOrder').modal('show');
     //renderOrder(812);
-    //console.log($("#enquiry_form").serialize());
+    var send_index = $("#send_index").val();
+    if(send_index=="请选择发货地址"){
+      $("#send_index").focus();
+      $('#smModal .modal-body p').html('请选择发货地址');
+      $('#smModal').modal('show');
+      return;
+    }
+
+    var startAddress1 = $("#startAddress1").val();
+    var planStartTime = $("#planStartTime").val();
+    if(planStartTime==""){
+      $("#planStartTime").focus();
+      $('#smModal .modal-body p').html('请选择计划发运时间');
+      $('#smModal').modal('show');
+      return;
+    }
+    var arrive_index = $("#arrive_index").val();
+    if(arrive_index=="请选择到达地址"){
+      $("#arrive_index").focus();
+      $('#smModal .modal-body p').html('请选择到达地址');
+      $('#smModal').modal('show');
+      return;
+    }
+    var arriveAddress1 = $("#arriveAddress1").val();
+    var bidName = $("#bidName").val();
+    if(bidName==""){
+      $("#bidName").focus();
+      $('#smModal .modal-body p').html('请输入货物名称');
+      $('#smModal').modal('show');
+      return;
+    }
+    var bidWeight = $("#bidWeight").val();
+    if(bidWeight==""){
+      $("#bidWeight").focus();
+      $('#smModal .modal-body p').html('请输入重量(吨)');
+      $('#smModal').modal('show');
+      return;
+    }
+    var flag = false;
+    flag = /^(0|([1-9][0-9]*))(\.[0-9]{1,2})?$/.test(bidWeight);
+    if(!flag || bidWeight==0 || bidWeight=="0"){
+      $("#bidWeight").focus();
+      $('#smModal .modal-body p').html('请输入大于零最多2位小数重量(吨)');
+      $('#smModal').modal('show');
+      return;
+    }
+    return;
     $.ajax({
         url: "/cargocn-cloud-EnqiryQuotation/TmpEnqiryMain/addTmpEnqiry.do",
         type: "GET",
@@ -89,7 +148,7 @@ $.fn.select2.defaults.set( "theme", "bootstrap" );
         contentType: "application/json; charset=utf-8",
         //contentType:"application/x-www-form-urlencoded",
         data: $("#enquiry_form").serialize(),
-        success: function(result) {
+        success: function(result){
            //console.log("result"+result);
            if(result.code==100){
               //console.log("用户手机号：" + result.data.userTel);
@@ -108,7 +167,27 @@ $.fn.select2.defaults.set( "theme", "bootstrap" );
            console.log('ajax请求出错！');
         }
     });
-  })
+  }else{
+    $('#pop_login_out').modal('toggle');
+    $('#login_out_box a').eq(0).trigger('click');
+
+  }
+})
+
+$('#login_out_box').on('click', 'a', function(event) {
+      event.preventDefault();
+      var that = this;
+      $.ajax({
+              url: $(this).attr('href'),
+              type: 'GET',
+              contentType: "text/plain",
+              dataType: 'html'
+          })
+          .done(function(back) {
+              $('#popular10').html(back);
+              $(that).parent('li').addClass('active').siblings().removeClass('active');
+          });
+  });
 
   $(".car_type_box span.item").on('click',function(){
     if(!$(this).hasClass('active')){

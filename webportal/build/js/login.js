@@ -22,7 +22,7 @@ CHENGDA.www.login = function () {
 			rules: {
 				username: {
 					required: true//,
-					//phoneZH: true
+					//phoneZH: 
 				},
 				password: {
 					//passwordReg: true,

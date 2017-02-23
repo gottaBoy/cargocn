@@ -1,6 +1,6 @@
-var CHENGDA = {};
-CHENGDA.www = {};
-CHENGDA.www.userData = {};
+// var CHENGDA = {};
+// CHENGDA.www = {};
+// CHENGDA.www.userData = {};
 
 CHENGDA.www.index = function() {
 
