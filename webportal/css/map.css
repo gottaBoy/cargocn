@@ -1,0 +1,62 @@
+.main-map{
+	background: url(../images/contact.jpg) no-repeat;
+  width: 100%;
+  height: 800px;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  clear: both;
+}
+
+.contact_main{
+  background:#528AD2;
+  width:340px;
+  position:absolute;
+  z-index:2;
+  margin-top:45px;
+
+}
+.contact_main .contact_tops{
+	height:77px;
+	background:#427ECA;
+	line-height:77px;
+	font-family:"微软雅黑";
+	font-size:24px;
+	color:#ffffff;
+	font-weight:bold
+}
+.contact_main .contact_tops b{
+	float: left;
+	padding-left:40px
+}
+.contact_bottom{
+   height:600px;
+   overflow-y:scroll
+}
+.contact_listmain{
+	border-bottom:1px solid #427ECA;
+	margin-bottom:10px;
+}
+.contact_listtitle{
+	color:#ffffff;
+	font-size:18px;
+	font-family:"微软雅黑";
+	font-weight:bold;
+	padding-left:35px;
+	padding-bottom:5px;
+}
+.contact_listmain .clists .ctext{
+	text-align: left;
+	color: #fff;
+	padding-left: 20px
+}
+.contact_listmain .clists{
+	padding-bottom: 20px;
+}
+.contact_listmain .clists .fl{
+	float: left
+}
+.t23{
+	padding: 10px 0;
+	font-weight: bold;
+}
