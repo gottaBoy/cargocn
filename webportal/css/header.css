@@ -825,3 +825,10 @@ header .well-sm {
 .glyphicon-ok{
   color: green;
 }
+
+.fusion-img {
+  width: 70px;
+  height: 70px;
+  float: left;
+  margin-right: 10px
+}

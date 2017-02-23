@@ -282,6 +282,7 @@
 }
 .side-4 .well-page ul li {
   float: left;
+  line-height: 25px;
   font-size: 14px;
   text-align: left;
   display: block;
@@ -323,7 +324,7 @@
    
 }
 .barnav-page ul li .panelbody .pannel-body{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color:#32bfbd;
     background-color: #fff;
@@ -336,5 +337,12 @@
   border: 1px solid #fff;
   padding-left: 20px
 
+}
+
+.fusion-img {
+  width: 70px;
+  height: 70px;
+  float: left;
+  margin-right: 10px
 }
  

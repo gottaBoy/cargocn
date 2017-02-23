@@ -21,9 +21,26 @@
     <link rel="stylesheet" href="css/about_css.css">
     <!-- Links -->
     <link rel="stylesheet" href="css/map.css">
+    <link href="css/header.css" rel="stylesheet">
     <!--JS-->
     <script src="js/jquery.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="build/js/heads.js"></script>
+    <script src="js/wow.js"></script>
+    <script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       100
+      }
+    );
+    wow.init();
+    document.getElementById('moar').onclick = function() {
+      var section = document.createElement('section');
+      section.className = 'section--purple wow fadeInDown';
+      this.parentNode.insertBefore(section, this);
+    };
+  </script>
 
     <!--[if lt IE 9]>
     <div style=' clear: both; text-align:center; position: relative;'>
@@ -50,55 +67,9 @@
     <!--========================================================
                               HEADER
     =========================================================-->
-    <header class="mod-1">
-        <section class="well-sm">
-            <div id="stuck_container" class="stuck_container">
-                <div class="container">
-                    <nav class="navbar navbar-default navbar-static-top ">
-                        <div class="navbar-header">
-                            <h1 class="navbar-brand">
-                                <a href="./">
-                                    <!-- <span>T</span>RANS -->
-                                    <img class="cargocn_logo" src="images/logo.png" alt=""/>
-                                </a>
-                            </h1>
-                        </div>
-                        <ul class="navbar-nav sf-menu navbar-right" data-type="navbar">
-                            <li>
-                                <a href="index.html">首页</a>
-                            </li>
-                            <li class="dropdown">
-                               <!--  <a href="index-1.html">关于我们</a> -->
-                                <a href="enquiry.html">在线询价</a>
-                                <!-- <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#introduction">公司简介</a>
-                                    </li>
-                                    <li>
-                                        <a href="#growth">发展历程</a>
-                                    </li>
-                                    <li>
-                                        <a href="#team">管理团队</a>
-                                    </li>
-                                    <li>
-                                        <a href="#contact">联系我们</a>
-                                    </li>
-                                </ul> -->
-                            </li>
-
-                            <li>
-                                <a href="about.html#contact">联系我们</a>
-                            </li>
-                            <li>
-                                <!-- <a href="http://www.cargocn.com/cargocn/n_index.do?show=down">下载</a> -->
-                                <!-- <a href="./download.html">下载</a> -->
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </section>
-    </header>
+      <header class="mod-1" id="header">
+        
+      </header>
 
     <!--========================================================
                               CONTENT
@@ -442,12 +413,12 @@
           <div class="container">
             <div class="contact_main">
               <div class="contact_tops clearfix">
-                  <b>全国各公司</b> 
+                  <b>全国各公司分布点</b> 
               </div>
 
               <div class="contact_bottom mCustomScrollbar _mCS_1">
               <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" tabindex="0">
-              <div id="mCSB_1_container" class="mCSB_container" style="position: relative; top: 0px; left: 0px;" dir="ltr">
+              <div id="mCSB_1_container" class="mCSB_container" style="position: relative; top: 10px; left: 0px;" dir="ltr">
 
                   <div class="contact-lists">
                     <div class="contact_listmain">
@@ -460,6 +431,7 @@
                           <i class="fa fa-map-marker fa-lg"> </i> (总部)上海成达信息科技有限公司
                           </div>
                           <div class="text2">
+                            联系人：<br>
                             联系电话：021-61869868      400-8565886<br>
                             地址：上海市杨浦区政益路五角丰达广场48号706室。<br>
                           </div>
@@ -479,6 +451,7 @@
                           <i class="fa fa-map-marker fa-lg"> </i>  北京运通成达信息科技有限公司
                           </div>
                           <div class="text2">
+                            联系人：<br>
                             联系电话：010-82447158<br>
                             地址：北京市海淀区善缘街1号，立方庭2段211室。<br>
                           </div>
@@ -499,6 +472,7 @@
                           <i class="fa fa-map-marker fa-lg"> </i> 江西新余办事处
                           </div>
                           <div class="text2">
+                            联系人：<br>
                             联系电话：<br>
                             地址：<br>
                           </div>
@@ -519,6 +493,7 @@
                           <i class="fa fa-map-marker fa-lg"> </i> 河北沧州办事处
                           </div>
                           <div class="text2">
+                            联系人：<br>
                             联系电话：<br>
                             地址：<br>
                           </div>
@@ -539,6 +514,7 @@
                           <i class="fa fa-map-marker fa-lg"> </i> 安徽盛耀百达物流有限公司
                           </div>
                           <div class="text2">
+                            联系人：<br>
                             联系电话：<br>
                             地址：<br>
                           </div>
@@ -559,6 +535,7 @@
                           <i class="fa fa-map-marker fa-lg"> </i>  天津成达物流有限公司
                           </div>
                           <div class="text2">
+                            联系人：<br>
                             联系电话：<br>
                             地址：天津市大悦城悦府4栋1904室<br>
                           </div>
@@ -579,6 +556,7 @@
                           <i class="fa fa-map-marker fa-lg"> </i> 山西运通成达物流有限公司
                           </div>
                           <div class="text2">
+                            联系人：<br>
                             联系电话：035-15602909<br>
                             地址：迎泽南街鼎元时代中心A座1305室<br>
                           </div>
@@ -599,7 +577,8 @@
                           <i class="fa fa-map-marker fa-lg"> </i> 内蒙古成达物流有限公司
                           </div>
                           <div class="text2">
-                            联系电话：133 2718 3499 （张总）<br>
+                            联系人：张总<br>
+                            联系电话：133 2718 3499<br>
                             地址：<br>
                           </div>
                         </div>
@@ -619,7 +598,8 @@
                           <i class="fa fa-map-marker fa-lg"> </i> 广东成达物流有限公司
                           </div>
                           <div class="text2">
-                            联系电话：186 6698 7222（卢荡）<br>
+                            联系人：卢荡<br>
+                            联系电话：186 6698 7222 <br>
                             地址：珠海高栏港经济区临港东路港务大楼601室。<br>
                             公寓地址：广东省珠海市金湾区红旗镇虹晖一路39号东方润园8栋2单元403室。<br>
                           </div>
@@ -663,58 +643,12 @@
         </section>
     </footer> -->
 </div>
-<footer class="footer ">
-    <div class="container">
-        <div class="row footer-top">
-
-                 <div class="col-md-8 col-lg-8">
-                     <table border="0" width="100%" frame="void" rules="none" cellspacing="1" cellpadding="1">
-                    <tbody>
-                    <tr style="text-align: center;" valign="top">
-                    <td>
-                    <h5 data-fontsize="13" data-lineheight="14"><strong><span style="color: #e0e0e0;">关于我们</span></strong></h5>
-                    <h5 data-fontsize="13" data-lineheight="14"><span style="color: #b0b0b0;"><a style="color: #b0b0b0;" title="公司简介" href="./about.html" target="_blank">公司简介</a></span></h5>
-                    <h5 data-fontsize="13" data-lineheight="14"><span style="color: #b0b0b0;"><a style="color: #b0b0b0;" title="发展历程" href="./about.html#growth" target="_blank">发展历程</a></span></h5>
-                    <h5 data-fontsize="13" data-lineheight="14"><span style="color: #b0b0b0;"><a style="color: #b0b0b0;" title="管理团队" href="./about.html#team" target="_blank">管理团队</a></span></h5>
-                    <h5 data-fontsize="13" data-lineheight="14"><span style="color: #b0b0b0;"><a style="color: #b0b0b0;" title="联系我们" href="./about.html#contact" target="_blank">联系我们</a></span></h5>
-
-                    </td>
-                   
-                    <td>
-                    <h5 data-fontsize="13" data-lineheight="14"><strong><span style="color: #e0e0e0;">资源管理</span></strong></h5>
-                    <h5 data-fontsize="13" data-lineheight="14"><span style="color: #b0b0b0;"><a style="color: #b0b0b0;" title="下载中心" href="./download.html" target="_blank">下载中心</a></span></h5>
-                    <h5 data-fontsize="13" data-lineheight="14"><span style="color: #b0b0b0;"><a style="color: #b0b0b0;" title="产品中心" href="./product.html" target="_blank">产品中心</a></span></h5>
-                    </td>
-                    <td>
-                    <h5 data-fontsize="13" data-lineheight="14"><strong><span style="color: #e0e0e0;">帮助中心</span></strong></h5>
-                    <h5 data-fontsize="13" data-lineheight="14"><span style="color: #b0b0b0;"><a style="color: #b0b0b0;" title="个人中心" href="" target="_blank">个人中心</a></span></h5>
-                    <h5 data-fontsize="13" data-lineheight="14"><span style="color: #b0b0b0;"><a style="color: #b0b0b0;" title="客户服务" href="./service.html" target="_blank">客户服务</a></span></h5>
-                    <h5 data-fontsize="13" data-lineheight="14"><span style="color: #b0b0b0;"><a style="color: #b0b0b0;" title="联系我们" href="./about.html#contact" target="_blank">联系我们</a></span></h5>
-
-                    </td>
-
-
-                    </tr>
-                    </tbody>
-                    </table>
-                    
-                  </div>
-                <div class="fusion-clearfix"></div>
-                   <div class="col-md-4 col-lg-4"> <h5 data-fontsize="13" data-lineheight="14"><strong><span style="color: #e0e0e0;">商务合作</span></strong></h5>
-                    <h5 data-fontsize="13" data-lineheight="14"><span style="color: #b0b0b0;"><a style="color: #b0b0b0;" title="下载中心" href="" target="_blank">服务热线：400-856-5886</a></span></h5>
-                    <h5 data-fontsize="13" data-lineheight="14"><span style="color: #b0b0b0;"><a style="color: #b0b0b0;" title="文档中心" href="" target="_blank">企业邮箱：Service@Cargocn.com</a></span></h5>
-                    </div>
-             </div>
-
-       <div class="row footer-bottom">
-                    Copyright &#169; <span>2015</span>
-                    CargoCN,沪ICP备15003385
-                    版权所有
-                    
-                </p>
-        </div>
-    </div>  
- </footer>
+<footer class="footer" id="footer">
+        
+</footer>
+<script type="text/javascript">
+   CHENGDA.www.CHENGDAWWWINIT.init('about');
+</script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
