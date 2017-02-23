@@ -217,22 +217,22 @@
 .wemcn {
   display: none;
   font-size: 12px;
-  top: -35px;
+  top: 40px;
   position: absolute;
-  right: -120px;
+  right: -210px;
   z-index: 10;
 }
 
 .side-4 .wemcn {
   display: none;
   font-size: 12px;
-  top: -90px;
+  top: -15px;
   position: absolute;
-  right: -120px;
+  right: -220px;
   /* z-index: 10; */
 }
 .wemcn .ewmDiv {
-  width: 275px;
+  // width: 275px;
   padding: 10px;
   background: #fff;
   border: 2px solid #efefef;
@@ -257,11 +257,12 @@
   padding-left: 10px;
   font-size: 14px;
 }
-.fa-caret-down {
+.fa-caret-left {
   position: absolute;
-  margin-top: -11px;
+  margin-top: -60px;
   text-align: center;
-  left: 10px;
+  float: left;
+  left: -7px;
 }
 
 .well-page{
