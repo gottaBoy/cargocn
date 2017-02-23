@@ -25,10 +25,7 @@
 	color:#ffffff;
 	font-weight:bold
 }
-.contact_main .contact_tops b{
-	float: left;
-	padding-left:40px
-}
+
 .contact_bottom{
    height:600px;
    overflow-y:scroll
