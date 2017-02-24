@@ -32,7 +32,7 @@
     <script src="build/js/config.js"></script>
     <script src="build/js/heads.js"></script>
     <script type='text/javascript' src='build/js/production.js'></script>
-    <script src="build/js/index.js"></script>
+    
     
     
     <script type='text/javascript' src='../vendor/js-cookie/src/js.cookie.js'></script>
@@ -93,8 +93,59 @@
     <!--========================================================
                               HEADER
     =========================================================-->
-    <header class="mod-1" id="header">
-        
+    <header class="mod-1" id="header1">
+        <section class="well-sm">
+            <div id="stuck_container" class="stuck_container">
+                <div class="container">
+                    <nav class="navbar navbar-default navbar-static-top ">
+                        <div class="navbar-header">
+                            <h1>
+                                <a href="./index.html">
+                                    <img src="images/logo.png" alt=""/>
+                                </a>
+                            </h1>
+                        </div>
+                        <ul id="menu-main" class="navbar1 sf-menu navbar-right" data-type="navbar">
+                            <li>
+                                <a href="./index.html">首页</a>
+                            </li>
+                            <li class="dropdown">
+                               <!--  <a href="index-1.html">关于我们</a> -->
+                                <a href="./enquiry.html">在线询价</a>
+                                <!-- <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#introduction">公司简介</a>
+                                    </li>
+                                    <li>
+                                        <a href="#growth">发展历程</a>
+                                    </li>
+                                    <li>
+                                        <a href="#team">管理团队</a>
+                                    </li>
+                                    <li>
+                                        <a href="#contact">联系我们</a>
+                                    </li>
+                                </ul> -->
+                            </li>
+                            <li>
+                                <a href="./about.html#contact">联系我们</a>
+                            </li>
+                            <li class="mega-menu-item mega-menu-signin signin logged" id="headerAccount">
+                                    <a href="login.html" style="font-size:17px;">
+                                        <!-- <i class="fa fa-sign-in"></i> --> 登录
+                                    </a>
+                                <!-- <a href="" class="button-login1" data-toggle="modal" data-target="#myModal">登录</a> -->
+                            </li>
+                            <li class="mega-menu-item mega-menu-signin signin logged" id="logout">
+                                <a href="register.html" style="font-size:17px;">
+                                    <!-- <i class="fa fa-sign-out"></i> --> 注册
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
     </header>
     <!--========================================================
                               CONTENT
@@ -589,6 +640,7 @@ $(function(){
 <script src="../vendor/social-share.js/src/js/jquery.qrcode.min.js"></script>
 <script src="../vendor/social-share.js/dist/js/share.min.js"></script>
 <script src="js/tm-scripts.js"></script>
+<script src="build/js/index.js"></script>
 <script src="build/js/enquiry.js"></script>
 </body>
 </html>

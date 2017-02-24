@@ -69,6 +69,7 @@ CHENGDA.www.index.prototype.loginStatus = function() {
         }
     }
     var setUser = function(page_name) {
+        console.log("setUser");
         if (myCookie.get('access_token')) {
             // var user_data = JSON.parse(Base64.decode(myCookie.get('access_token')));
             // if(user_data.data.check_status==0){
@@ -134,7 +135,7 @@ CHENGDA.www.index.prototype.loginStatus = function() {
                 $('#logout').off('click');
                 myCookie.delete('access_token');
                 //clearCookie('access_token');
-                debugger;
+                //debugger;
                 console.log('用户退出');
                 window.location.href = 'index.html';
             } else {
@@ -147,7 +148,7 @@ CHENGDA.www.index.prototype.loginStatus = function() {
         $('#headerAccount a').on('click', function(event) {
             //debugger;
             event.preventDefault();
-            
+            console.log('已成功ddddd');
             // if ($(this).attr('href') == 'user.html') {
             //     window.location.href = 'user.html';
             // }else if($(this).attr('href') == 'user.html?target=user_data.html') {
@@ -383,7 +384,7 @@ CHENGDA.www.index.prototype.loginStatus = function() {
     return {
         init: function(){
             console.log("init:start!");
-            setUser();
+            setUser(1);
             ////userActive();
             // pageCheck();
             //loginGo();
