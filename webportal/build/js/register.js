@@ -1,6 +1,7 @@
 CHENGDA.www.register = function () {
     var voiceStatus = true;
     var imgKeyRandom = '';
+    var timer = null;
     // validation using icons
     var handleValidation = function() {
         // for more info visit the official plugin documentation:
@@ -105,18 +106,11 @@ CHENGDA.www.register = function () {
     };
 
     var registerSet = function(param){
-     //$("#submit_user").on('click',function(){
-        // var param = {
-        //     userTel: $('#phone').val(),
-        //     verifyCode:$('#verifyCode').val(),
-        //     password: $('#password').val(),
-        // }
-        console.log("已进入");
-        //return ;
+        console.log(moment() + "start ajax register");
         $.ajax({
             url: "/cargocn-cloud-server/creatUser.do",//BASE_API_URL,
             type: 'POST',
-            async: true,
+            //async: true,
             dataType: 'JSON',
             data: param,
             success: function(result) {
@@ -137,11 +131,22 @@ CHENGDA.www.register = function () {
      //            }
                 //console.log(result);
                 if(result.code=="100"){
-                   $("#pop_login_out").modal("hide");
+                   console.log("register success");
+                   $("#pop_login_out").modal("toggle");
+                   $('#login_out_box a').eq(0).trigger('click');
                 }else{
-                	console.log("注册失败！");
+                    console.log(moment() + "register error");
                 }
-
+                $("#alert_box span").html(result.msg);
+				$("#alert_box").show();
+				if(timer==null){//5s后错误信息消失
+					timer=setTimeout(function(){
+						$("#alert_box span").html("");
+						$("#alert_box").hide();
+						clearTimeout(timer);
+						timer=null;
+					},10000);
+				}
             }
         });
      //});
@@ -317,13 +322,13 @@ CHENGDA.www.register = function () {
 	    $('#code_second').html('60');
 	    $('#resetCode').show();
 	    var second = 60;
-	    var timer = null;
-	    timer = setInterval(function(){
+	    var timer1 = null;
+	    timer1 = setInterval(function(){
 	        second -= 1;
 	        if(second >0 ){
 	            $('#code_second').html(second);
 	        }else{
-	            clearInterval(timer);
+	            clearInterval(timer1);
 	            $('#getCode').show();
 	            $('#resetCode').hide();
 	        }
@@ -337,7 +342,7 @@ CHENGDA.www.register = function () {
 		    //checkPhone(); //验证手机号码
 		    var userPhone = $("#phone").val();
 		    if(/^1\d{10}$/.test($('#phone').val())){
-		    	console.log("获取验证码成功！");
+		    	console.log(moment() + "start get code");
 		    	resetCode(); //倒计时
 		    	//return;
 		        $.ajax({
@@ -345,13 +350,22 @@ CHENGDA.www.register = function () {
 		            type: "POST",
 		            dataType: "json",
 		            success: function(result) {
-		               console.log(result);
-		               if(result.code==100){
-		                 //resetCode(); //倒计时
-		                 console.log(result.data);
-		               }else{
-		                 console.log("获取验证码失败！");
-		               }
+		                //console.log(result);
+		                if(result.code==100){
+		                   console.log(moment() + result.msg);
+		                }else{
+		                 console.log(moment() + " get code error");
+		                }
+		                $("#alert_box span").html(result.msg);
+						$("#alert_box").show();
+						if(timer==null){//5s后错误信息消失
+							timer=setTimeout(function(){
+								$("#alert_box span").html("");
+								$("#alert_box").hide();
+								clearTimeout(timer);
+								timer=null;
+							},10000);
+						}
 		            }
 		        });
 		    }else{

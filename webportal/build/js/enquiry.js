@@ -14,10 +14,10 @@ var reloadPage = function (){
 }
 
 var showOrder = function(order){
-   $("#orderNumber").html("询价单号：" + order.enquiryBillId); 
-   $("#order_routine").html(order.startAddress + " → " + order.arriveAddress);
-   $("#order_time").html("计划发运时间：" + order.planStartTime);//计划到达时间quoteEndTime
-   $("#order_object").html( order.bidName + ":" + order.bidWeight);//bidNum,bidVolume,planArriveTime
+   $("#orderNumber").empty().html("询价单号：" + order.enquiryBillId); 
+   $("#order_routine").empty().html(order.startAddress + " → " + order.arriveAddress);
+   $("#order_time").empty().html("计划发运时间：" + order.planStartTime);//计划到达时间quoteEndTime
+   $("#order_object").empty().html( order.bidName + ":" + order.bidWeight + "吨");//bidNum,bidVolume,planArriveTime
 }
 
 var renderOrder = function(id){
@@ -256,7 +256,7 @@ $('#login_out_box').on('click', 'a', function(event) {
   }
   $('.form_date').datetimepicker({
     language: "zh-CN",
-    startDate: moment().format('YYYY-MM-DD'),
+    startDate: moment().format('YYYY-MM-DD HH:mm:ss'),
     weekStart: 1,
     todayBtn:  1,
     autoclose: 1,
