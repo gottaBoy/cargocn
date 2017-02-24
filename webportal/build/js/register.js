@@ -17,8 +17,8 @@ CHENGDA.www.register = function () {
 
     $.validator.addMethod("passwordReg", function(value, element) { 
         var length = value.length;
-        var tpassword = /^(?:\d+|[a-zA-Z]+|[!@#$%^&*]+)$/; 
-        return this.optional(element) || ((length >= 6 && length <=20) && tpassword.test(value)); 
+        var tpassword = /^[\w]{6,20}$/;///^(?:\d+|[a-zA-Z]+|[!@#$%^&*]+)$/; 
+        return this.optional(element) || (tpassword.test(value)); 
     },"请输入密码6-20个字符");
 
     // validation using icons
@@ -129,7 +129,7 @@ CHENGDA.www.register = function () {
         console.log(moment() + "start ajax register");
         //$("#pop_login_out").modal("toggle");
         //$('#login_out_box a').eq(0).trigger('click');
-        return;
+        //return;
         $.ajax({
             url: "/cargocn-cloud-server/creatUser.do",//BASE_API_URL,
             type: 'POST',
