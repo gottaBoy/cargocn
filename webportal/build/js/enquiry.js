@@ -17,7 +17,7 @@ var showOrder = function(order){
    $("#orderNumber").html("询价单号：" + order.enquiryBillId); 
    $("#order_routine").html(order.startAddress + " → " + order.arriveAddress);
    $("#order_time").html("计划发运时间：" + order.planStartTime);//计划到达时间quoteEndTime
-   $("#order_object").html( order.bidName + ":" + order.bidWeight);//bidNum,bidVolume,planArriveTime
+   $("#order_object").html( order.bidName + ":" + order.bidWeight + "吨");//bidNum,bidVolume,planArriveTime
 }
 
 var renderOrder = function(id){
