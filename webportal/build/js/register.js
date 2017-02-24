@@ -2,6 +2,25 @@ CHENGDA.www.register = function () {
     var voiceStatus = true;
     var imgKeyRandom = '';
     var timer = null;
+     // 手机号码验证 
+    $.validator.addMethod("isMobile", function(value, element) { 
+        var length = value.length; 
+        var mobile = /^(((13[0-9]{1})|(15[0-9]{1})|(14[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/; 
+        return this.optional(element) || (length == 11 && mobile.test(value)); 
+    }, "请正确填写您的手机号码"); 
+
+    $.validator.addMethod("codeLength", function(value, element) { 
+        //var length = value.length; 
+        var num = /^(\d{4})$/; 
+        return this.optional(element) || (num.test(value)); 
+    }, "请输入4位数字验证码"); 
+
+    $.validator.addMethod("passwordReg", function(value, element) { 
+        var length = value.length;
+        var tpassword = /^(?:\d+|[a-zA-Z]+|[!@#$%^&*]+)$/; 
+        return this.optional(element) || ((length >= 6 && length <=20) && tpassword.test(value)); 
+    },"请输入密码6-20个字符");
+
     // validation using icons
     var handleValidation = function() {
         // for more info visit the official plugin documentation:
@@ -18,15 +37,15 @@ CHENGDA.www.register = function () {
                 ignore: "",  // validate all fields including form hidden input
                 rules: {
                     userTel: {
-                        required: true//,
-                        //phoneZH: true
+                        required: true,
+                        isMobile: true
                     },
                     contact: {
                         //contactReg: true,
                         required: true
                     },
 					password: {
-                        //passwordReg: true,
+                        passwordReg: true,
                         required: true
                     },
                     rpassword: {
@@ -35,7 +54,7 @@ CHENGDA.www.register = function () {
 				    },
                     verifyCode: {
                         required: true,
-                        number: true
+                        codeLength: true
                     },
                     imgcodeinput: {
                         required: true
@@ -43,7 +62,8 @@ CHENGDA.www.register = function () {
                 },
                 messages: {
                     userTel: {
-                        required: "请输入手机号"
+                        required: "请输入手机号",
+                        isMobile:"请正确填写您的手机号码"
                     },
                     contact: {
                         required: "联系人不能为空"
@@ -107,6 +127,9 @@ CHENGDA.www.register = function () {
 
     var registerSet = function(param){
         console.log(moment() + "start ajax register");
+        //$("#pop_login_out").modal("toggle");
+        //$('#login_out_box a').eq(0).trigger('click');
+        return;
         $.ajax({
             url: "/cargocn-cloud-server/creatUser.do",//BASE_API_URL,
             type: 'POST',
@@ -132,7 +155,7 @@ CHENGDA.www.register = function () {
                 //console.log(result);
                 if(result.code=="100"){
                    console.log("register success");
-                   $("#pop_login_out").modal("toggle");
+                   //$("#pop_login_out").modal("toggle");
                    $('#login_out_box a').eq(0).trigger('click');
                 }else{
                     console.log(moment() + "register error");
