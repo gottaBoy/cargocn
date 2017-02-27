@@ -32,6 +32,9 @@ a:active,a:hover {
  .carousel-inner-phone{
         display: none
      }
+ .item-tel{
+    display: none
+ }
 @media only screen and (max-width: 1400px){
     .carousel-inner .item{
         height:100% !important;
@@ -40,6 +43,9 @@ a:active,a:hover {
     .carousel-inner-phone{
         display: none
      }
+      .item-tel{
+    display: none
+ }
 }
 
 @media only screen and (max-width: 991px){
@@ -49,6 +55,9 @@ a:active,a:hover {
     .carousel-inner-phone{
         display: none
      }
+      .item-tel{
+    display: none
+ }
      
 }
 
@@ -66,6 +75,30 @@ a:active,a:hover {
       #subnav {
         top: 90%
     }
+    .item-tel{
+    display: block;
+    position: absolute;
+    font: 23px/47px Microsoft YaHei;
+    top:40px;
+    padding:400px 90px; 
+    cursor: pointer;
+    z-index: 1;
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+    -webkit-animation-name: anim-subnav;
+    animation-name: anim-subnav;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate
+
+   }
 }
 
 .side-1 .item{
