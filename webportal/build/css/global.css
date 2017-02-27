@@ -29,29 +29,43 @@ a:active,a:hover {
  #subnav {
         top: 90%
     }
+ .carousel-inner-phone{
+        display: none
+     }
 @media only screen and (max-width: 1400px){
     .carousel-inner .item{
         height:100% !important;
         overflow: hidden;
     }
+    .carousel-inner-phone{
+        display: none
+     }
 }
 
 @media only screen and (max-width: 991px){
-     .carousel-inner .item{
-           
+     .carousel-inner .item{ 
             overflow: hidden;
         }
+    .carousel-inner-phone{
+        display: none
+     }
+     
 }
 
 
-
-
  @media only screen and (max-width: 790px) {
-        .carousel-inner .item{
-         
+        .carousel-inner .item{         
             overflow: hidden;
         }  
-  
+       .carousel-inner-phone{
+        display: block
+     }
+     #carousel-example-generic{
+        display: none
+     }
+      #subnav {
+        top: 90%
+    }
 }
 
 .side-1 .item{
@@ -3702,7 +3716,16 @@ a:active,a:hover {
     border-radius: 7px;
 }
 
-
+@media only screen and (max-width: 791px) {
+   #navi li a {
+     padding:4px;
+     width: 20px;
+     height: 20px;
+   }
+    #navi li{
+    margin:2px
+   }
+}
 #navi li span { 
     font: 15px/47px Microsoft YaHei;
     color: #fff;
