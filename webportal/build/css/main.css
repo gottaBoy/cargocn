@@ -36,6 +36,7 @@
   margin: 0 10px;
   color: #159ae6 !important;
 }
+
 @media only screen and (max-width: 1400px){
   .side-2 .text-blue h1 {
   font-size: 40px;
@@ -257,25 +258,38 @@
 }
 @media only screen and (max-width: 991px){
   .border-blue {
-      margin-left: 0;
+      display: none
     }
-    .wemcn{
-      right: -130px;
-    }
+  .now_data{
+    display: none
+  }
+  .pic{
+    display: none
+  }
+  
+    
 }
 @media only screen and (max-width: 791px){
   .border-blue {
-      margin-left: 0;
+      display: none
     }
-    .wemcn{
-      right: -130px;
-    }
+  .now_data{
+    display: none
+  } 
+  .pic{
+    display: none
+  }
+  .box-content{
+    margin-left:0;
+  }
+    
 }
 .btn-social-blue {
   position: relative;
   padding-left: 66px;
   text-align: left;
 }
+
 .btn-social-blue > :first-child {
   position: absolute;
   left: 0;
@@ -293,6 +307,18 @@
   margin-top: 60px;
   margin-left:60px;
 }
+@media only screen and (max-width: 991px){
+  .box-content{
+    margin-left:0;
+  }
+}
+
+@media only screen and (max-width: 791px){
+  .box-content{
+    margin-left:0;
+  }
+}
+
 .wemcn {
   display: none;
   font-size: 12px;
@@ -356,6 +382,12 @@
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
 }
+.side-4 .btn-social-blue {
+  position: relative;
+  padding-left: 66px;
+  text-align: left;
+  margin-top: 30px
+}
 .side-4 .well-page ul {
   margin: 0px;
   padding: 0px;
@@ -389,6 +421,26 @@
   width: 127px;
   padding: 15px;
 }
+@media only screen and (max-width: 991px){
+  .side-4 .barnav-page ul li{
+     width: 142px;
+     padding-bottom:10px;
+     padding-left:15px
+  }
+  .well-page{
+    margin: 0
+  }
+}
+@media only screen and (max-width: 791px){
+  .side-4 .barnav-page ul li{
+     width: 142px;
+     padding-bottom:10px;
+     padding-left:15px
+  }
+  .well-page{
+    margin: 0
+  }
+}
 .barnav-page ul li .panelbody .pannel-heading-radius{
   width: 60px;
   height: 60px;
@@ -398,6 +450,18 @@
   padding: 10px 15px;
   margin: 10px  20px;
 }
+@media only screen and (max-width: 991px){
+  .barnav-page ul li .panelbody .pannel-heading-radius{
+    display: none
+  }
+}
+  
+@media only screen and (max-width: 791px){
+  .barnav-page ul li .panelbody .pannel-heading-radius{
+    display: none
+  }
+}
+  
 .barnav-page ul li .panelbody .pannel-heading-radius span{
     font-size: 14px;
     font-weight: bold;
@@ -411,6 +475,7 @@
   height: 22px !important;
 
 }
+
 .barnav-page ul li .panelbody .pannel-body{
     font-size: 16px;
     font-weight: bold;

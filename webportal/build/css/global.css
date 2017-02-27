@@ -34,19 +34,13 @@ a:active,a:hover {
         height:100% !important;
         overflow: hidden;
     }
-    #subnav {
-        top: 80%
-    }
 }
 
 @media only screen and (max-width: 991px){
      .carousel-inner .item{
-            
+           
             overflow: hidden;
         }
-        #subnav {
-        top: 40%
-    }
 }
 
 
@@ -54,12 +48,10 @@ a:active,a:hover {
 
  @media only screen and (max-width: 790px) {
         .carousel-inner .item{
-            
+         
             overflow: hidden;
-        } 
-        #subnav {
-        top: 20%
-    }  
+        }  
+  
 }
 
 .side-1 .item{
