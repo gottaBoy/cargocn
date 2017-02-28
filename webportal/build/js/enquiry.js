@@ -154,6 +154,10 @@ $("#send_enquiry").on('click',function(){
               //console.log("用户手机号：" + result.data.userTel);
               showOrder(result.data);
               renderOrder(result.data.id);
+              $('#shareOrder').on('hidden.bs.modal', function (e) {
+                // do something...
+                reloadPage();
+              })
               // if(result.data.locked = false){ //正常的
                   
               // }else{ //true 未验证通过
@@ -266,6 +270,7 @@ $('#login_out_box').on('click', 'a', function(event) {
     minView: 2,
     forceParse: 0
   });
+  $('#planStartTime').val(moment().add(2, 'days').format('YYYY-MM-DD HH:mm:ss'));
 
   $("#send_another").on('click',function(){
       $('#shareOrder').modal('hide');
