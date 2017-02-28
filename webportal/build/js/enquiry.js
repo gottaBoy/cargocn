@@ -152,8 +152,10 @@ $("#send_enquiry").on('click',function(){
            //console.log("result"+result);
            if(result.code==100){
               //console.log("用户手机号：" + result.data.userTel);
+              //$("#toTop").click();//.trigger();
               showOrder(result.data);
               renderOrder(result.data.id);
+
               $('#shareOrder').on('hidden.bs.modal', function (e) {
                 // do something...
                 reloadPage();
