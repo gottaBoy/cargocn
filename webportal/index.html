@@ -72,13 +72,13 @@
                     <li id="menu-item-846" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-846"><a href="about.html#contact">联系我们</a></li>
 
                      <li class="mega-menu-item mega-menu-signin signin logged" id="headerAccount">
-                            <a href="login.html" style="font-size:17px;">
+                            <a href="login.html">
                                 <!-- <i class="fa fa-sign-in"></i> --> 登录
                             </a>
                         <!-- <a href="" class="button-login1" data-toggle="modal" data-target="#myModal">登录</a> -->
                     </li>
                     <li class="mega-menu-item mega-menu-signin signin logged" id="logout">
-                        <a href="register.html" style="font-size:17px;">
+                        <a href="register.html">
                             <!-- <i class="fa fa-sign-out"></i> --> 注册
                         </a>
                     </li>
@@ -619,7 +619,9 @@ $(document).ready(function() {
      });
 
     $('.now_data').liMarquee({
-        direction: 'up'
+        direction: 'up',
+        circular:true,
+        startShow:true
     });
     
     loadliMarquee();

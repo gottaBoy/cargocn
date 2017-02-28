@@ -80,7 +80,7 @@ a:active,a:hover {
     position: absolute;
     font: 23px/47px Microsoft YaHei;
     left:30%;
-    top:20%;
+    top:15%;
     padding: 400px 0; 
     cursor: pointer;
     z-index: 1;
@@ -6044,12 +6044,14 @@ body {
   #nav #menu-main #nav-right{
     float: left;
     margin-left:0px;
+    color: #000
  }
 }
 @media only screen and (max-width: 791px){
   #nav #menu-main #nav-right{
     float: left;
     margin-left:0px;
+    color: #000
  }
 }
 
