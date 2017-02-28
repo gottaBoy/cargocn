@@ -794,11 +794,18 @@ header .well-sm {
     right: 20%;
     bottom:-15px
   }  
+  .pull-right .bottom{
+    display: none
+  }
 }
 @media only screen and (max-width: 791px){
   .row-contain .ewmimg-text{
     right: 20%;
-  }  
+  } 
+  .pull-right .bottom{
+    display: none
+  }
+} 
 }
 
 
