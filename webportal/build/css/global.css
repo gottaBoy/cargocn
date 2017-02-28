@@ -76,12 +76,12 @@ a:active,a:hover {
         top: 90%
     }
     .item-tel{
+    top: 71%;
+    text-align:center;
+    color: #fff !important;
     display: block;
     position: absolute;
     font: 23px/47px Microsoft YaHei;
-    left:30%;
-    top:15%;
-    padding: 400px 0; 
     cursor: pointer;
     z-index: 1;
     -webkit-transform: translateY(6px);
@@ -5856,7 +5856,7 @@ a {
 }
 
 a:visited {
-    color: #000
+    // color: #000
 }
 
 a:active,a:focus,a:hover {
@@ -6000,6 +6000,7 @@ body {
 
 
 #header .header #m-nav {
+    right:0;
     clear: both;
     font: 20px/34px Microsoft YaHei;
     text-transform: uppercase;
@@ -6028,7 +6029,7 @@ body {
 
 #nav #menu-main #nav-right{
     color: #fff;
-    float:left;
+    float: left;
     top:10px;
     margin-left:100px;
 }
@@ -6369,7 +6370,8 @@ body {
 
 @media only screen and (max-width: 768px) {
     #navi {
-        right:15px
+        right:5px;
+        top:75%
     }
 
     #team li {
