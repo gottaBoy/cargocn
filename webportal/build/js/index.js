@@ -105,39 +105,30 @@ CHENGDA.www.index.prototype.loginStatus = function() {
             if ($(this).attr('href') == 'logout.html') {
                 ////var token = getCookie('access_token')?JSON.parse(Base64.decode(getCookie('access_token'))).data.token:null;
                 // var username = myCookie.get('access_token');
-                // $.ajax({
-                //         url: '/cargocn-cloud-server/appLogout.do',//?username=' + getCookie('access_token'),
-                //         type: 'POST', 
-                //         dataType: 'JSON',
-                //         contentType: "text/plain",
-                //         data: {username: username},
-                //     })
-                //     .done(function(result) {
-                //         if (result.code=='100') {
-                //             $('#headerAccount a').attr({
-                //                 href: 'login.html'
-                //             }).html('登录');//('<i class="fa fa-sign-in"></i> 登录');
-                //             $('#logout a').attr({
-                //                 href: 'register.html'
-                //             }).html('注册');//('<i class="fa fa-user-plus"></i> 申请加入')
-                //             $('#logout').off('click');
-                //             myCookie.delete('access_token');
-                //             //clearCookie('access_token');
-                //             window.location.href = 'index.html';
-                //         };
-                //     });
-                $('#headerAccount a').attr({
-                    href: 'login.html'
-                }).html('登录');//('<i class="fa fa-sign-in"></i> 登录');
-                $('#logout a').attr({
-                    href: 'register.html'
-                }).html('注册');//('<i class="fa fa-user-plus"></i> 申请加入')
-                $('#logout').off('click');
-                myCookie.delete('access_token');
-                //clearCookie('access_token');
-                //debugger;
-                console.log('用户退出');
-                window.location.href = 'index.html';
+                $.ajax({
+                        url: '/cargocn-cloud-server/appLogout.do',//?username=' + getCookie('access_token'),
+                        type: 'POST', 
+                        dataType: 'JSON',
+                        contentType: "text/plain",
+                        data: {username: username},
+                    })
+                    .done(function(result) {
+                        if (result.code=='100') {
+                            $('#headerAccount a').attr({
+                                href: 'login.html'
+                            }).html('登录');//('<i class="fa fa-sign-in"></i> 登录');
+                            $('#logout a').attr({
+                                href: 'register.html'
+                            }).html('注册');//('<i class="fa fa-user-plus"></i> 申请加入')
+                            $('#logout').off('click');
+                            myCookie.delete('access_token');
+                             console.log('用户退出');
+                            //clearCookie('access_token');
+                            window.location.href = 'index.html';
+                        }else{
+                            console.log("退出失败！");
+                        }
+                    });
             } else {
                 //注册pop窗口
                 $('#pop_login_out').modal('toggle');
@@ -148,7 +139,7 @@ CHENGDA.www.index.prototype.loginStatus = function() {
         $('#headerAccount a').on('click', function(event) {
             //debugger;
             event.preventDefault();
-            console.log('已成功ddddd');
+            //console.log('已成功ddddd');
             // if ($(this).attr('href') == 'user.html') {
             //     window.location.href = 'user.html';
             // }else if($(this).attr('href') == 'user.html?target=user_data.html') {
