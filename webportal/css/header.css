@@ -756,11 +756,12 @@ header .well-sm {
 
 .modal-page{
   background: #159ae6;
-  height: 100px;
+  height: auto
 }
 .modal-page1{
   background: #159ae6;
-  height: 150px;  
+  height: auto; 
+
 }
 .modal-page span{
   color: #fff;
@@ -773,15 +774,33 @@ header .well-sm {
   margin-top: 35px;
   color: #fff
 }
+.row-contain .ewmimg{
+  height:100%;
+  margin: 10px auto
+}
 .row-contain .ewmimg img{
   margin:20px;
   width: 150px;
   height: 150px
 }
 .row-contain .ewmimg-text{
-  bottom: -140px;
+  position: absolute;
+  bottom: 20px;
+  right:60px;
   font-size:14px
 }
+@media only screen and (max-width: 991px){
+  .row-contain .ewmimg-text{
+    right: 20%;
+    bottom:-15px
+  }  
+}
+@media only screen and (max-width: 791px){
+  .row-contain .ewmimg-text{
+    right: 20%;
+  }  
+}
+
 
 .row-contain h2{
   color:#000;
@@ -807,6 +826,16 @@ header .well-sm {
     padding: 35px 10px;
     float: left;
     display: inline
+}
+@media only screen and (max-width: 991px){
+  .modal-page1 .rwmtext{
+    display: none
+  }
+}
+@media only screen and (max-width: 791px){
+  .modal-page1 .rwmtext{
+    display: none
+  }
 }
 .modal-page1 .wechat-img{
   float: left;

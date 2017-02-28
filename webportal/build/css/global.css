@@ -79,8 +79,9 @@ a:active,a:hover {
     display: block;
     position: absolute;
     font: 23px/47px Microsoft YaHei;
-    top:40px;
-    padding:400px 90px; 
+    left:30%;
+    top:50px;
+    padding: 400px 0; 
     cursor: pointer;
     z-index: 1;
     -webkit-transform: translateY(6px);
@@ -3730,7 +3731,7 @@ a:active,a:hover {
     right: 0;
     top: 50%;
     margin-top: -52px;
-    z-index: 9998
+    z-index: 1
 }
 
 .icno{
@@ -6034,11 +6035,22 @@ body {
 #nav #menu-main #nav-right .glyphicon{
         margin: 0 10px;
 }
-@media screen (width:779px){
+@media only screen and (max-width: 1400px){
   #nav #menu-main #nav-right{
-    float:left;
-    margin-left:0px;
+    margin-left:100px;
+ }
 }
+@media only screen and (max-width: 991px){
+  #nav #menu-main #nav-right{
+    float: left;
+    margin-left:0px;
+ }
+}
+@media only screen and (max-width: 791px){
+  #nav #menu-main #nav-right{
+    float: left;
+    margin-left:0px;
+ }
 }
 
 #header.portfolio #nav #menu-main #nav-right .glyphicon {
@@ -6228,6 +6240,9 @@ body {
 }
 
 @media only screen and (max-width: 1380px) {
+    .side.side-2,.side.side-4{
+        height: 100% !important;
+    }
     .side.side-2 .item-wrap .item-text,.side.side-3 .item-wrap .item-text,.side.side-4 .item-wrap .item-text,.side.side-5 .item-wrap .item-text {
         font:35px Microsoft YaHei
     }
@@ -6693,3 +6708,6 @@ body {
     justify-content: center;
 }
 
+.redMark{
+  color: red
+}
