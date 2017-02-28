@@ -104,7 +104,7 @@ CHENGDA.www.index.prototype.loginStatus = function() {
             event.preventDefault();
             if ($(this).attr('href') == 'logout.html') {
                 ////var token = getCookie('access_token')?JSON.parse(Base64.decode(getCookie('access_token'))).data.token:null;
-                // var username = myCookie.get('access_token');
+                var username = myCookie.get('access_token');
                 $.ajax({
                         url: '/cargocn-cloud-server/appLogout.do',//?username=' + getCookie('access_token'),
                         type: 'POST', 
