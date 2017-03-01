@@ -594,7 +594,8 @@ header .well-sm {
 .rd-mobilepanel_title {
   position: fixed;
   padding-left: 10px;
-  top: 4px;
+  margin:5px 0;
+  top:4px;
   left: 56px;
   right: 56px;
   color: #000000;
@@ -789,6 +790,9 @@ header .well-sm {
   right:60px;
   font-size:14px
 }
+.modal-dialogmain{
+  width:450px
+}
 @media only screen and (max-width: 991px){
   .row-contain .ewmimg-text{
     right: 20%;
@@ -796,6 +800,10 @@ header .well-sm {
   }  
   .pull-right .bottom{
     display: none
+  }
+  .modal-dialogmain{
+     width:90% !important;
+     margin: 10px auto
   }
 }
 @media only screen and (max-width: 791px){
@@ -805,7 +813,10 @@ header .well-sm {
   .pull-right .bottom{
     display: none
   }
-} 
+  .modal-dialogmain{
+     width:90% !important;
+     margin: 10px auto
+  }
 }
 
 

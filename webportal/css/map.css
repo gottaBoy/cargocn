@@ -10,10 +10,12 @@ background: url(../images/contact.jpg) no-repeat;
 
 .contact_main{
   background:#528AD2;
-  width:340px;
+  width:auto;
   position:absolute;
   z-index:2;
   margin-top:45px;
+  margin-right: auto;
+  margin-left: auto;
 
 }
 .contact_main .contact_tops{

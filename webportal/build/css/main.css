@@ -309,15 +309,26 @@
   margin-top: 60px;
   margin-left:60px;
 }
+.modal-dialog{
+  width:450px
+}
 @media only screen and (max-width: 991px){
   .box-content{
     margin-left:0;
+  }
+  .modal-dialog{
+     width:90%;
+     margin: 10px auto
   }
 }
 
 @media only screen and (max-width: 791px){
   .box-content{
     margin-left:0;
+  }
+  .modal-dialog{
+     width:90%;
+     margin: 10px auto
   }
 }
 
