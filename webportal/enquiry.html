@@ -159,7 +159,7 @@
                     <div class="panel-heading">
                         <div class="form-group col-md-6">
                             <label for="inputEmail3" class="col-sm-4 control-label">创建时间</label>
-                            <div class="col-sm-4" id="today">
+                            <div class="" id="today">
                                
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12 form-group">
-                                                            <label for="startAddress1" class="control-label col-md-4"><i class="redMark">*</i>发货地址</label>
+                                                            <label for="startAddress1" class="control-label col-md-4">发货地址</label>
                                                             <div class="col-md-6">
                                                                 <input id="startAddress1" name="startAddress1" type="text" class="form-control">   
                                                             </div>
@@ -214,7 +214,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12 form-group">
-                                                            <label for="arriveAddress1" class="control-label col-md-4"><i class="redMark">*</i>收货地址</label>
+                                                            <label for="arriveAddress1" class="control-label col-md-4">收货地址</label>
                                                             <div class="col-md-6">
                                                                 <input id="arriveAddress1" name="arriveAddress1" type="text" class="form-control">
                                                             </div>
@@ -484,9 +484,9 @@
               </div>
             </div> -->
             <!-- 登录 -->
-            <div class="modal fade" id="shareOrder" style="top:70px;" data-backdrop="static" data-keyboard=false tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="shareOrder" data-keyboard=false data-backdrop="static">
               <div class="modal-dialog modal-md">
-                <div class="modal-content" style="margin-top:250px;">
+                <div class="modal-content">
                   <div class="modal-header modal-page">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                        <span aria-hidden="true" style="font-size: 48px;">&times;</span>
@@ -636,11 +636,12 @@
         
     </footer>
 </div>
+<div class="rdmobilemenu"></div>
 <script type="text/javascript">
 $(function(){
     $("#today").html(moment().format('YYYY-MM-DD'));
-})
     CHENGDA.www.CHENGDAWWWINIT.init('enquiry');
+})
 </script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -650,5 +651,11 @@ $(function(){
 <script src="js/tm-scripts.js"></script>
 <script src="build/js/index.js"></script>
 <script src="build/js/enquiry.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    RDMobilemenu_autoinit('[data-type="navbar"]');
+    new CHENGDA.www.index().init();
+});
+</script>
 </body>
 </html>

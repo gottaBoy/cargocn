@@ -421,6 +421,13 @@ var o = $('#camera');
         ripplyScott.init('btn-ripple', 0.75);
     }
 
+
+
 })(jQuery);
 
-
+/* Navbar
+ ========================================================*/
+;
+(function ($) {
+    include('../build/js/index.js');
+})(jQuery);

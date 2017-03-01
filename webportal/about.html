@@ -550,6 +550,7 @@
 <footer class="footer" id="footer">
         
 </footer>
+<div class="rdmobilemenu"></div>
 <script type="text/javascript">
    CHENGDA.www.CHENGDAWWWINIT.init('about');
 </script>
@@ -558,5 +559,11 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/tm-scripts.js"></script>
 <!-- </script> -->
+<script type="text/javascript">
+$(document).ready(function () {
+    RDMobilemenu_autoinit('[data-type="navbar"]');
+    new CHENGDA.www.index().init();
+});
+</script>
 </body>
 </html>
