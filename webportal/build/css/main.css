@@ -170,6 +170,7 @@
 @media only screen and (max-width: 991px){
   .side-4 .text-blue h1 {
   font-size: 36px;
+  margin-top: 20%;
   }
   .side-4 .text-blue .w {
     font-size: 20px;
@@ -179,6 +180,7 @@
 @media only screen and (max-width: 791px){
   .side-4 .text-blue h1 {
   font-size: 30px;
+  margin-top: 20%;
   }
   .side-4 .text-blue .w {
     font-size: 18px;
