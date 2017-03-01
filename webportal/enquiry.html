@@ -633,8 +633,8 @@
 <script type="text/javascript">
 $(function(){
     $("#today").html(moment().format('YYYY-MM-DD'));
-})
     CHENGDA.www.CHENGDAWWWINIT.init('enquiry');
+})
 </script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -644,5 +644,11 @@ $(function(){
 <script src="js/tm-scripts.js"></script>
 <script src="build/js/index.js"></script>
 <script src="build/js/enquiry.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    RDMobilemenu_autoinit('[data-type="navbar"]');
+    new CHENGDA.www.index().init();
+});
+</script>
 </body>
 </html>

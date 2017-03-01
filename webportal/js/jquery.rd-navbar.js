@@ -41,7 +41,7 @@
             $('.rdmobilemenu').after($('<div/>', {
                     'class': settings.cntClass
                 }).append(nav.createNavDOM()))
-                .append($('<div/>', {
+                .after($('<div/>', {
                     'class': settings.panelClass
                 })
                     .append($('<button/>', {
@@ -267,6 +267,6 @@
     };
 })(jQuery);
 
-$(document).ready(function () {
-    RDMobilemenu_autoinit('[data-type="navbar"]');
-});
+// $(document).ready(function () {
+//     RDMobilemenu_autoinit('[data-type="navbar"]');
+// });

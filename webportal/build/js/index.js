@@ -391,4 +391,4 @@ CHENGDA.www.index.prototype.loginStatus = function() {
     }
 };
 
-new CHENGDA.www.index().init();
+//new CHENGDA.www.index().init();
