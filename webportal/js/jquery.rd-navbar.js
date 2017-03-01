@@ -36,9 +36,9 @@
 
         createDOM: function () {
             var nav = this;
-
-            $('body')
-                .append($('<div/>', {
+            
+            //$('body').append()
+            $('.rdmobilemenu').after($('<div/>', {
                     'class': settings.cntClass
                 }).append(nav.createNavDOM()))
                 .append($('<div/>', {
@@ -57,17 +57,27 @@
             var nav = this;
 
             var menu = $('<ul>', {'class': settings.menuClass});
-
+            //extend 
+            menu.attr("id","menu-main");
+    
             var li = nav.$source.children();
+            //console.log(li);
             for (var i = 0; i < li.length; i++) {
                 var o = li[i].children,
                     item = null;
+                    //console.log(li[i].id);
                 for (var j = 0; j < o.length; j++) {
                     if (o[j].tagName) {
                         if (!item) {
                             item = document.createElement('li');
                             if (li[i].className.indexOf('active') > -1) {
                                 item.className = 'active';
+                            }
+                            if(li[i].id=="headerAccount"){
+                                 item.id="headerAccount";
+                            }
+                            if(li[i].id=="logout"){
+                                item.id = "logout";
                             }
                         }
 

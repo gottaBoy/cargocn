@@ -153,6 +153,7 @@ $("#send_enquiry").on('click',function(){
            if(result.code==100){
               //console.log("用户手机号：" + result.data.userTel);
               //$("#toTop").click();//.trigger();
+              $('html, body').animate({scrollTop:0});
               showOrder(result.data);
               renderOrder(result.data.id);
 
