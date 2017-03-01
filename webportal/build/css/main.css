@@ -333,9 +333,9 @@
 .side-4 .wemcn {
   display: none;
   font-size: 12px;
-  top: -15px;
+  top: -10px;
   position: absolute;
-  right: -220px;
+  right: -210px;
   /* z-index: 10; */
 }
 .wemcn .ewmDiv {
