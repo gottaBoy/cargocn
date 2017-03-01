@@ -297,6 +297,42 @@ $('#login_out_box').on('click', 'a', function(event) {
   $('#send_close').on('click',function(){
     $('#myModal').modal('hide');
   });
+
+  $('#logout a').on('click', function(event) {
+    event.preventDefault();
+    if ($(this).attr('href') == 'logout.html') {
+        ////var token = getCookie('access_token')?JSON.parse(Base64.decode(getCookie('access_token'))).data.token:null;
+        var username = myCookie.get('access_token');
+        $.ajax({
+                url: '/cargocn-cloud-server/appLogout.do',//?username=' + getCookie('access_token'),
+                type: 'POST', 
+                dataType: 'JSON',
+                contentType: "text/plain",
+                data: {username: username},
+            })
+            .done(function(result) {
+                if (result.code=='100') {
+                    $('#headerAccount a').attr({
+                        href: 'login.html'
+                    }).html('登录');//('<i class="fa fa-sign-in"></i> 登录');
+                    $('#logout a').attr({
+                        href: 'register.html'
+                    }).html('注册');//('<i class="fa fa-user-plus"></i> 申请加入')
+                    $('#logout').off('click');
+                    myCookie.delete('access_token');
+                     console.log('用户退出');
+                    //clearCookie('access_token');
+                    window.location.href = 'index.html';
+                }else{
+                    console.log("退出失败！");
+                }
+            });
+    } else {
+        //注册pop窗口
+        $('#pop_login_out').modal('toggle');
+        $('#login_out_box a').eq(1).trigger('click');
+    }
+  });
 })
 /*$('.sns-share').share();*/
 /*var $config = {
