@@ -298,7 +298,7 @@ $('#login_out_box').on('click', 'a', function(event) {
     $('#myModal').modal('hide');
   });
 
-  $('#logout a').on('click', function(event) {
+  /*$('#logout a').on('click', function(event) {
     event.preventDefault();
     if ($(this).attr('href') == 'logout.html') {
         ////var token = getCookie('access_token')?JSON.parse(Base64.decode(getCookie('access_token'))).data.token:null;
@@ -332,7 +332,7 @@ $('#login_out_box').on('click', 'a', function(event) {
         $('#pop_login_out').modal('toggle');
         $('#login_out_box a').eq(1).trigger('click');
     }
-  });
+  });*/
 })
 /*$('.sns-share').share();*/
 /*var $config = {
