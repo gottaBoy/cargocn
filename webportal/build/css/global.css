@@ -35,6 +35,7 @@ a:active,a:hover {
  .item-tel{
     display: none
  }
+
 @media only screen and (max-width: 1400px){
     .carousel-inner .item{
         height:100% !important;
@@ -76,7 +77,8 @@ a:active,a:hover {
         top: 90%
     }
     .item-tel{
-    top: 71%;
+    bottom:13%;
+    padding:0 20%;
     text-align:center;
     color: #fff !important;
     display: block;
