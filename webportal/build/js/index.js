@@ -110,7 +110,7 @@ CHENGDA.www.index.prototype.loginStatus = function() {
                         type: 'POST', 
                         dataType: 'JSON',
                         contentType: "text/plain",
-                        data: {username: username},
+                        data: {username: username}
                     })
                     .done(function(result) {
                         if (result.code=='100') {

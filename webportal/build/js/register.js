@@ -157,12 +157,14 @@ CHENGDA.www.register = function () {
                    console.log("register success");
                    //$("#pop_login_out").modal("toggle");
                    $('#login_out_box a').eq(0).trigger('click');
-                   //$("#alert_box span").html("恭喜您注册成功,请登录!");
+                   $("#alert_box span").html("恭喜您注册成功,请登录!");
                 }else{
                     console.log(moment() + "register error");
+                    $("#alert_box span").html(result.msg);
                     //$("#alert_box span").html("注册失败,请稍后重试!");
                 }
-                $("#alert_box span").html(result.data);
+                //console.log(result);
+                //$("#alert_box span").html(result.data);
 				$("#alert_box").show();
 				if(timer==null){//5s后错误信息消失
 					timer=setTimeout(function(){
