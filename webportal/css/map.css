@@ -1,23 +1,48 @@
+
 .main-map{
-background: url(../images/contact.jpg) no-repeat;
   width: 100%;
-  height: 900px;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
-  clear: both;
+  
 }
-
+@media only screen and (max-width:1400px){
+	.contact_main{
+		  position: absolute !important;
+		  top:10% !important;
+	}
+	.contact_bottom{
+		height: 40% !important;
+		top:10% !important
+	}
+}
+@media only screen and (max-width:991px){
+	.contact_main{
+		  position:relative !important;
+		  
+	}
+}
+@media only screen and (max-width:791px){
+	.contact_main{
+		  position:relative !important;
+	}
+}
 .contact_main{
   background:#528AD2;
   width:auto;
+  //bottom: -22%;
+  //height:677px;
   position:absolute;
   z-index:2;
-  margin-top:45px;
+  top:10%;
   margin-right: auto;
   margin-left: auto;
 
 }
+
 .contact_main .contact_tops{
 	height:77px;
 	background:#427ECA;
