@@ -619,11 +619,11 @@ $(document).ready(function() {
          $(this).parent().next().toggle(); 
      });
 
-    $('.now_data').liMarquee({
-        direction: 'up',
-        circular:true,
-        startShow:true
-    });
+    // $('.now_data').liMarquee({
+    //     direction: 'up',
+    //     circular:true,
+    //     startShow:true
+    // });
     
     loadliMarquee();
    
@@ -638,7 +638,13 @@ var renderResult = function(data){
       content += '<span class="wu"><i>' + data[i].bidWeight + '</i>吨</span>';
       content += '<span class="state1">'+ data[i].enquiryStatus + '</span>';
       content += '</a></li>';
-      $("#myliMarquee").append(content);
+      $("#myliMarquee").html(content);
+      //liMarquee('addContent','New Content')
+      $('.now_data').liMarquee({
+        direction: 'up',
+        circular:true,
+        startShow:true
+      });
   }
   //$("#myliMarquee").html(content);
 }
@@ -679,6 +685,11 @@ var renderResult1 = function(){
   content += '<li><a href="#"><span class="time">19:28</span><span class="user">常州市 → 温州市</span><span class="wu"><i>38.865</i>吨货物</span><span class="state3">正在报价</span></a></li>';
   content += '<li><a href="#"><span class="time">19:25</span><span class="user">南京市 → 镇江市</span><span class="wu"><i>29.27</i>吨货物</span><span class="state1">正在询价</span></a></li>';
   $("#myliMarquee").html(content);
+  $('.now_data').liMarquee({
+    direction: 'up',
+    circular:true,
+    startShow:true
+  });
 };
 $(document).ready(function () {
     new CHENGDA.www.index().init();
