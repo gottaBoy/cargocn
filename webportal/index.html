@@ -629,23 +629,22 @@ $(document).ready(function() {
    
 })
 var renderResult = function(data){
-  
+  var content = "";
   for(var i=0;i<data.length;i++){  //planStartTime:"2016-12-03 16:08:15"
-      var content = '';
-      content += '<li><a href="javascript:void(0);">';
-      content += '<span class="time">' + data[i].planStartTime + '</span>';
-      content += '<span class="user">' + data[i].startAddress + ' → ' + data[i].arriveAddress + '</span>';
-      content += '<span class="wu"><i>' + data[i].bidWeight + '</i>吨</span>';
-      content += '<span class="state1">'+ data[i].enquiryStatus + '</span>';
-      content += '</a></li>';
-      $("#myliMarquee").html(content);
-      //liMarquee('addContent','New Content')
-      $('.now_data').liMarquee({
+    content += '<li><a href="javascript:void(0);">';
+    content += '<span class="time">' + data[i].planStartTime + '</span>';
+    content += '<span class="user">' + data[i].startAddress + ' → ' + data[i].arriveAddress + '</span>';
+    content += '<span class="wu"><i>' + data[i].bidWeight + '</i>吨</span>';
+    content += '<span class="state1">'+ data[i].enquiryStatus + '</span>';
+    content += '</a></li>';
+    //liMarquee('addContent','New Content')
+  }
+  $("#myliMarquee").html(content);
+  $('.now_data').liMarquee({
         direction: 'up',
         circular:true,
         startShow:true
       });
-  }
   //$("#myliMarquee").html(content);
 }
 var loadliMarquee = function(){
