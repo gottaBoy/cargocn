@@ -65,7 +65,7 @@ var renderOrder = function(id){
         label: 'no label',
         fontname: 'sans',
         fontcolor: '#000',
-        image: null //"http://172.16.10.55:3000/images/share_cargocn_driver.png"
+        image: '../images/favicon.png'
     }
     $('#qrcode').empty();
     $('#qrcode').qrcode(qrcode_setting);
