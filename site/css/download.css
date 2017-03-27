@@ -1,0 +1,14 @@
+.btn:hover {
+  /* color: #edf3f7; */
+  background-color: #54A9FE;
+  border-color: #54A9FE;
+} 
+.p-dl{
+   margin-top: 20px;
+   font-size: 20px;
+   font-weight: bold;
+}
+.pd-dl{
+    padding:30px 15px;
+    margin:20px 0px;
+}

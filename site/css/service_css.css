@@ -1,0 +1,67 @@
+.well-s1 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+@media (min-width: 992px) {
+  .well-s1 {
+    padding-top: 60px;
+    padding-bottom: 50px;
+  }
+}
+.service-bg{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    color: #0E335E; 
+}
+.service_bg{
+  background-image: url('../images/service-small.png');
+}
+.service_bg{
+     height: 520px;
+     width: 281px;
+     margin-left:-10px;
+} 
+@media(min-width: 320px) {
+.service_bg{
+     margin-left:11px;
+} 
+}
+@media(min-width: 375px) {
+.service_bg{
+     margin-left:40px;
+} 
+}
+@media(min-width: 425px) {
+.service_bg{
+     margin-left:62px;
+} 
+}
+@media(min-width: 480px) {
+.service_bg{
+     height: 520px;
+     width: 281px;
+     margin-left:72px;
+} 
+}
+@media(min-width: 768px) {
+ .service_bg{
+  background-image: url('../images/service-middle.png');
+}
+.service_bg{
+     height: 399px;
+     width: 767px;
+     margin-left:0px;
+} 
+}
+@media(min-width: 992px) {
+ .service_bg{
+  background-image: url('../images/service-big.png');
+}
+.service_bg{
+     height: 400px;
+     width: 900px;
+     margin-left:0px;
+} 
+}
+
