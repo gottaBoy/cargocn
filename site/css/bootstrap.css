@@ -10710,7 +10710,7 @@ body.search_body {
 }
 .line-left{
   position: absolute;
-  margin-left: 49%;
+  margin-left: 44%;
   top:-80px
 }
 
@@ -10731,7 +10731,7 @@ body.search_body {
 }
 .fa-arrow-right{
   //position: absolute;
-  right: -12px;
+  right: 0;
   top:30px;
   color:#d72d1b
 }
