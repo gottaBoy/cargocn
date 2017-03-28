@@ -3584,6 +3584,7 @@ figure:hover h6 {
 }
 
 .index-news .item .summary {
+    margin-top: 20px;
     height: 3em;
     line-height: 1.5;
     overflow: hidden;
