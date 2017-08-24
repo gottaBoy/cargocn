@@ -294,7 +294,7 @@ gulp.task('watchcopy', function () {
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: './webportal',
+            baseDir: './site',//'./webportal',
             index:"/index.html"
         }
     })
@@ -303,7 +303,7 @@ gulp.task('browserSync', function() {
 gulp.task('devPage', ['browserSync'], function() {
     // Reloads the browser whenever HTML or JS files change
     //gulp.watch('sass/*.scss', ['sass']);
-    gulp.watch('webportal/*.html', browserSync.reload);
+    gulp.watch('site/*.html', browserSync.reload);
 });
 
 // 使用 gulp.task('default') 定义默认任务

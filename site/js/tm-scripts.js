@@ -18,7 +18,7 @@ include('js/jquery.easing.1.3.js');
 
 /* Stick up menus
  ========================================================*/
-;
+/*;
 (function ($) {
     var o = $('html');
     if (o.hasClass('desktop')) {
@@ -28,7 +28,7 @@ include('js/jquery.easing.1.3.js');
             $('#stuck_container').TMStickUp({})
         });
     }
-})(jQuery);
+})(jQuery);*/
 
 /* ToTop
  ========================================================*/
@@ -72,7 +72,7 @@ include('js/jquery.easing.1.3.js');
 
 
 
-;
+/*;
 (function ($) {
     function include(url) {
 	document.write('<script src="js/' + url + '"></script>');
@@ -82,7 +82,7 @@ include('js/jquery.easing.1.3.js');
 	jQuery(function () {
 })
 })(jQuery);
-
+*/
 
 
 /* Responsive Tabs
@@ -134,7 +134,7 @@ include('js/jquery.easing.1.3.js');
 
 /* Google Map
  ========================================================*/
-;
+/*;
 (function ($) {
     var o = document.getElementById("google-map");
     if (o) {
@@ -149,7 +149,7 @@ include('js/jquery.easing.1.3.js');
         });
     }
 })
-(jQuery);
+(jQuery);*/
 
 /* Owl Carousel
 ========================================================*/
@@ -197,7 +197,7 @@ include('js/jquery.easing.1.3.js');
 
 /* Stacktable
  ========================================================*/
-;
+/*;
 (function ($) {
     var o = $('.pricing-table');
     if (o.length > 0) {
@@ -206,7 +206,7 @@ include('js/jquery.easing.1.3.js');
             o.stacktable();
         });
     }
-})(jQuery);
+})(jQuery);*/
 /* Orientation tablet fix
  ========================================================*/
 $(function () {
@@ -257,7 +257,7 @@ document.write('<meta name="viewport" content="width=device-width,initial-scale=
 
 /* Camera
 ========================================================*/
-;(function ($) {
+/*;(function ($) {
 var o = $('#camera');
     if (o.length > 0) {
         if (!(isIE() && (isIE() > 9))) {
@@ -283,17 +283,17 @@ var o = $('#camera');
             })
         });
     }
-})(jQuery);
+})(jQuery);*/
 
 /* Search.js
  ========================================================*/
-;
+/*;
 (function ($) {
     var o = $('.search-form');
     if (o.length > 0) {
         include('js/TMSearch.js');
     }
-})(jQuery);  
+})(jQuery);  */
 
 
 
