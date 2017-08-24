@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Contacts</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Links -->
+
+    <!--JS-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+        </a>
+    </div>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <script src='js/device.min.js'></script>
+</head>
+<body>
+<div class="page text-center">
+    <!-- SVG Sprite -->
+    <div style="height: 0; width: 0; position: absolute; visibility: hidden;" aria-hidden="true">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <symbol id="ripply-scott" viewBox="0 0 100 100">
+                <circle id="ripple-shape" cx="1" cy="1" r="1"/>
+            </symbol>
+        </svg>
+    </div>
+    <!-- /end sprite -->
+    <!--========================================================
+                              HEADER
+    =========================================================-->
+    <header class="mod-1">
+        <section class="well-sm">
+            <div id="stuck_container" class="stuck_container">
+                <div class="container">
+                    <nav class="navbar navbar-default navbar-static-top ">
+                        <div class="navbar-header">
+                            <h1 class="navbar-brand">
+                                <a href="./">
+                                    <span>T</span>RANS
+                                </a>
+                            </h1>
+                        </div>
+                        <ul class="navbar-nav sf-menu navbar-right" data-type="navbar">
+                            <li>
+                                <a href="./">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="index-1.html">About</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">Trucking</a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="#">Local</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">International</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Air transportation</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Marine transportation</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="index-2.html">Services</a>
+                            </li>
+                            <li>
+                                <a href="index-3.html">Price list</a>
+                            </li>
+
+                            <li class="active">
+                                <a href="index-4.html">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!--========================================================
+                              CONTENT
+    =========================================================-->
+
+    <main class="text-center">
+        <div class="map">
+            <div id="google-map" class="map_model"></div>
+            <ul class="map_locations">
+                <li data-x="-73.9874068" data-y="40.643180">
+                    <p> 9870 St Vincent Place, Glasgow, DC 45 Fr 45. <span>800 2345-6789</span></p>
+                </li>
+            </ul>
+        </div>
+
+        <!--Contact us-->
+        <section class="well-18 border-btm">
+            <div class="container">
+                <h3 class="text-secondary">
+                    Contact us
+                </h3>
+                <hr class="sm sm-default"/>
+                <p class="inset-1">We are always ready to help you. There are many ways to contact us. You may drop us a
+                    line, give us a call or send an email, choose what suits you most.</p>
+
+                <div class="row offset-2">
+                    <div class="col-md-10 col-md-offset-1 inset-2">
+                        <address class="contact-info text-left">
+                            <dl>
+                                <dt class="h6 text-primary text-uppercase">Our address</dt>
+                                <dd>9870 St Vincent Place, Glasgow,&nbsp;DC&nbsp;45&nbsp;Fr&nbsp;45.
+                                </dd>
+                                <dt class="h6 text-primary text-uppercase">Telephones</dt>
+                                <dd><a href="callto:#">+1 800 603 6035</a></dd>
+                                <dd><a href="callto:#">+1 800 889 9898</a></dd>
+                                <dt class="h6 text-primary text-uppercase">E-mail</dt>
+                                <dd><a href="mailto:#">mail@demolink.org</a></dd>
+                            </dl>
+                        </address>
+                        <form class='rd-mailform' method="post" action="bat/rd-mailform.php" data-type="contact">
+                            <div class="form-group">
+                                <label data-add-placeholder for="mailform-input-name">
+                                    <input id="mailform-input-name"
+                                           placeholder="Name"
+                                           type="text"
+                                           name="name"
+                                           data-constraints="@NotEmpty @LettersOnly"/>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label data-add-placeholder for="mailform-input-email">
+                                    <input id="mailform-input-email"
+                                           placeholder="Email"
+                                           type="text"
+                                           name="email"
+                                           data-constraints="@NotEmpty @Email"/>
+                                </label>
+                            </div>
+
+                            <div class="form-group textarea">
+                                <label data-add-placeholder for="mailform-input-textarea">
+                      <textarea id="mailform-input-textarea"
+                                name="message"
+                                placeholder="Message"
+                                data-constraints="@NotEmpty"></textarea>
+                                </label>
+                            </div>
+
+                            <div class="form-group btn-wr">
+                                <button class="btn btn-ripple btn-primary btn-sm" type="submit">Send
+                                    <svg class="ripple-obj">
+                                        <use height="50" width="50" xlink:href="#ripply-scott"></use>
+                                    </svg>
+                                </button>
+                                <div class="mfInfo"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!--========================================================
+                            FOOTER
+  =========================================================-->
+    <footer>
+        <section class="well">
+            <div class="container">
+                <p class="rights">
+                    Copyright &#169; <span id="copyright-year"></span>
+                    Trans Transportation Company.
+                    <a href="index-5.html">Privacy Policy</a>
+                </p>
+            </div>
+        </section>
+    </footer>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/tm-scripts.js"></script>
+<!-- </script> -->
+</body>
+</html>
